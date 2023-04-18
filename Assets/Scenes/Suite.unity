@@ -8511,7 +8511,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCs:
   - {fileID: 277080668}
-  - {fileID: 0}
   - {fileID: 132509134}
   canvas: []
 --- !u!1 &1558528813
