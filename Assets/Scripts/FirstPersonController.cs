@@ -17,7 +17,7 @@ namespace StarterAssets
 		[Tooltip("Sprint speed of the character in m/s")]
 		public float SprintSpeed = 6.0f;
 		[Tooltip("Rotation speed of the character")]
-		public float RotationSpeed = 1.0f;
+		[Range(0f, 5f)] static public float RotationSpeed = 2.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 
@@ -61,7 +61,7 @@ namespace StarterAssets
 		private AudioSource m_AudioSource;
 		private float m_StepCycle;
         private float m_NextStep;
-		private bool m_IsWalking = false;
+		static public bool m_IsWalking = false;
 		private bool m_Jumping;
 		private bool m_PreviouslyGrounded;
 
@@ -84,9 +84,16 @@ namespace StarterAssets
 		static public bool pause = false;
 
 		// Success
+		static public int etape = 0;
 		static public bool Doyen = false;
 		static public bool DoyenEnd = false;
-		static public bool Mines = false;
+		static public bool MineTalk = false;
+		static public bool MineTalkEnd = false;
+		static public bool MineGame = false;
+		static public bool MineTalk2 = false;
+		static public bool MineTalkEnd2 = false;
+
+
 
 
 	
@@ -146,12 +153,7 @@ namespace StarterAssets
 			if (!m_PreviouslyGrounded && Grounded)
             {
                 PlayLandingSound();
-                _input.move.y = 0f;
                 m_Jumping = false;
-            }
-            if (!Grounded && !m_Jumping && m_PreviouslyGrounded)
-            {
-                _input.move.y = 0f;
             }
 
             m_PreviouslyGrounded = Grounded;
@@ -271,7 +273,7 @@ namespace StarterAssets
 				// move
 				inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
 				m_IsWalking = true;
-				ProgressStepCycle(_speed);
+				//ProgressStepCycle(_speed);
 			}
 
 			// move the player
@@ -309,7 +311,7 @@ namespace StarterAssets
 				{
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
-					PlayJumpSound();
+					//PlayJumpSound();
 					m_Jumping = true;
 				}
 
@@ -358,6 +360,14 @@ namespace StarterAssets
 
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
+		}
+
+		public float GetSpeed() {
+			return _speed;
+		}
+
+		public void SetRotationSpeed(float rspeed) {
+			RotationSpeed = rspeed;
 		}
 	}
 }

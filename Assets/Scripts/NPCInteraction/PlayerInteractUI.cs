@@ -12,22 +12,15 @@ public class PlayerInteractUI : MonoBehaviour
     private void Update() {
         if(playerInteract.GetInteractableObject() != null) {
             Show(playerInteract.GetInteractableObject());
-        } 
-        else if (playerInteract.GetInteractableDoor() != null) {
-            Show(playerInteract.GetInteractableDoor());
         }
         else {
             Hide();
         }
     }
 
-    private void Show(NPCInteractable npcInteractable) {
+    private void Show(InteractableObject interactableObject) {
         containerGameObject.SetActive(true);
-        interactTextMeshProUGUI.text = npcInteractable.GetInteractText();
-   }
-   private void Show(DoorInteractable doorInteractable) {
-        containerGameObject.SetActive(true);
-        interactTextMeshProUGUI.text = doorInteractable.GetInteractText();
+        interactTextMeshProUGUI.text = interactableObject.GetInteractText();
    }
    private void Hide() {
         containerGameObject.SetActive(false);

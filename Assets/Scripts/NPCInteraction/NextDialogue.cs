@@ -8,11 +8,12 @@ public class NextDialogue : MonoBehaviour
 {
     [SerializeField] private List<Animator> NPCs = new List<Animator>();
     [SerializeField] private List<GameObject> canvas = new List<GameObject>();
+    [SerializeField] private GameLoader gameLoader;
     private FirstPerson playerControls;
     private InputAction next;
     private FirstPersonController fpscontroller;
 
-    static public int index = 2;
+    static public int index = 3;
     private bool fin = false;
 
     void Awake(){
@@ -37,15 +38,21 @@ public class NextDialogue : MonoBehaviour
     {
         if (FirstPersonController.dialogue && !FirstPersonController.pause)
         {
-            if(transform.childCount > 1) {
+            if(transform.childCount <= 3) {
+                fin = true;
+            }
+            if(transform.childCount > 2) {
                 if (!fin)
                 {
-                    transform.GetChild(index).gameObject.SetActive(true);
-                    index += 1;
-                    if (transform.childCount == index)
+                    if (transform.childCount > 3)
                     {
-                        index = 2;
-                        fin = true;
+                        transform.GetChild(index).gameObject.SetActive(true);
+                        index += 1;
+                        if (transform.childCount == index)
+                        {
+                            index = 3;
+                            fin = true;
+                        }
                     }
                 }
                 else 
@@ -55,20 +62,21 @@ public class NextDialogue : MonoBehaviour
                         animator.ResetTrigger("Talk");
                     }
                     FirstPersonController.dialogue = false;
-                    for (int i=transform.childCount - 1 ; i>1 ; i--) {
-                        DestroyImmediate(transform.GetChild(index).gameObject);
-                    }
-                    DestroyImmediate(transform.GetChild(1).gameObject);
-                    fin = false;
-                    if(FirstPersonController.Doyen)
+                    if (transform.childCount>3)
                     {
-                        FirstPersonController.DoyenEnd = true;
+                        for (int i=transform.childCount - 1 ; i>2 ; i--) {
+                            DestroyImmediate(transform.GetChild(index).gameObject);
+                        }
                     }
-
+                    DestroyImmediate(transform.GetChild(2).gameObject);
+                    fin = false;
                     foreach (GameObject canva in canvas)
                     {
                         canva.SetActive(true);
                     }
+                    if(FirstPersonController.Doyen) {FirstPersonController.DoyenEnd = true;}
+                    if(FirstPersonController.MineTalk && !FirstPersonController.MineTalkEnd) {gameLoader.ChangeScene("Mine"); }
+                    if (FirstPersonController.MineGame && !FirstPersonController.MineTalk2) {gameLoader.ChangeScene("PlayGround");}
                 }
             }
         }

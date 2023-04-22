@@ -23,9 +23,7 @@ public class MenuController : MonoBehaviour
     private GameManager manager;
 
     [SerializeField] private EventSystem eventController;
-    
-    public Animator transition;
-    public float transitionTime = 1f;
+    [SerializeField] private GameLoader gameLoader;
 
     private void Start()
     {
@@ -54,18 +52,9 @@ public class MenuController : MonoBehaviour
     }
 
     public void ChangeScene(string _sceneName){
-        //StartCoroutine(LoadLevel(_sceneName));
-        manager.ChangeScene(_sceneName);
+        gameLoader.ChangeScene(_sceneName);
     }
-/*
-    IEnumerator LoadLevel(string _sceneName) {
-        transition.SetTrigger("FadeOut");
-        yield return new WaitForSeconds(transitionTime);
-        manager.ChangeScene(_sceneName);
-        //yield return new WaitForSeconds(transitionTime);
-        //transition.ResetTrigger("FadeOut");
-    }
-*/
+
     public void Quit()
     {
         manager.Quit();

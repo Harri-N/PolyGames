@@ -22,8 +22,10 @@ public class Resource : MonoBehaviour
 
     public void Tapped()
     {
-        Instantiate(resourcePrefab, PrefabSpawn.position, PrefabSpawn.rotation);
-        Destroy(gameObject, 2.0f);
+        resourcePrefab.SetActive(true);
+        //Instantiate(resourcePrefab, PrefabSpawn.position, PrefabSpawn.rotation);
+        Destroy(gameObject, 0.5f);
+        
     }
 
 }

@@ -10,7 +10,7 @@ public class AstucesManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Astuces;
     [SerializeField] private List<GameObject> canvas = new List<GameObject>();
     private FirstPersonController fpscontroller;
-    static public int success = 0;
+    [SerializeField] private GameLoader gameLoader;
 
 
     private void Awake() 
@@ -20,21 +20,44 @@ public class AstucesManager : MonoBehaviour
 
     void Update()
     {
-        if (FirstPersonController.DoyenEnd && success == 0)
+        if (FirstPersonController.DoyenEnd && FirstPersonController.etape == 0)
         {
+            FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
             dia.Add("Bonjour ! Je me présente, je m’appelle Glubulu et je fais partie de la cellule de pédagogie facultaire QAP-Polytech.");
             dia.Add("À la Polytech de Mons, nous avons mis en place un dispositif de réussite pour les nouveaux jeunes arrivants. C’est pourquoi je serai là pour t’accompagner et te conseiller tout au long de ton aventure.");
             dia.Add("N’hésite pas à me consulter en appuyant sur le bouton start et en allant dans la rubrique « astuces ».");
             dia.Add("Pour commencer, rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier, tu trouvera M. Goderniaux. Il te donnera la 1ère épreuve.");
             NPCAstuces.SetDialogues(dia);
-            success += 1;
             string text = "Pour commencer, rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier, tu trouvera M. Goderniaux. Il te donnera la 1ère épreuve.";
             float timewait = 2f;
             StartCoroutine(ChangeAstuces(timewait, text));
-            
-            
         }
+
+        if (FirstPersonController.MineTalkEnd && FirstPersonController.etape == 1)
+        {
+            FirstPersonController.etape += 1;
+            List<string> dia = new List<string>();
+            dia.Add("Nous voilà dans la grotte. Tu trouveras les matières premières au fond de celle-ci.");
+            NPCAstuces.SetDialogues(dia);
+            string text = "Aller au fond de la grotte.";
+            float timewait = 1f;
+            StartCoroutine(ChangeAstuces(timewait, text));    
+        }
+
+        if (FirstPersonController.MineGame && FirstPersonController.etape == 2)
+        {
+            FirstPersonController.etape += 1;
+            List<string> dia = new List<string>();
+            dia.Add("Super ! Tu as pu récolter les cailloux. Allons les rapporter M. Young");
+            NPCAstuces.SetDialogues(dia);
+            string text = "Va voir M. Reynolds à l'entrée du bâtiment principal.";
+            float timewait = 1f;
+            StartCoroutine(ChangeAstuces(timewait, text));   
+        }
+        
+
+
     }
 
     IEnumerator ChangeAstuces(float t, string text) {

@@ -5,9 +5,8 @@ using StarterAssets;
 using UnityEngine.InputSystem;
 using TMPro;
 
-public class NPCInteractable : MonoBehaviour
+public class NPCInteractable : InteractableObject
 {
-    [SerializeField] private string interactText;
     [SerializeField] private List<string> dialogues = new List<string>();
     [SerializeField] private string Nom;
     public GameObject head;
@@ -18,7 +17,7 @@ public class NPCInteractable : MonoBehaviour
     public GameObject d_template;
     public GameObject canva;
 
-    [SerializeField] private bool doyen;
+    [SerializeField] private string professeur;
     
 
     private void Awake()
@@ -26,7 +25,7 @@ public class NPCInteractable : MonoBehaviour
         animator = GetComponent<Animator>();
         npcLookAt = GetComponent<NPCLookAt>();
         fpscontroller = GetComponent<FirstPersonController>();
-        if(doyen) {
+        if(FirstPersonController.etape==0 && professeur == "doyen") {
             Interact(npcLookAt.transform);
         }
     }
@@ -41,9 +40,13 @@ public class NPCInteractable : MonoBehaviour
 
     public void Interact(Transform interactorTransform) 
     {
-        if(doyen)
-        {
-            FirstPersonController.Doyen = true;
+        switch(professeur) {
+            case "doyen":
+                FirstPersonController.Doyen = true;
+                break;
+            case "mine":
+                FirstPersonController.MineTalk = true;
+                break;
         }
         Debug.Log("Interact!");
         animator.SetTrigger("Talk");
@@ -55,11 +58,7 @@ public class NPCInteractable : MonoBehaviour
         foreach (string dialogue in dialogues) {
             NewDialogue(dialogue);
         }
-        canva.transform.GetChild(1).gameObject.SetActive(true); 
-    }
-
-    public string GetInteractText() {
-        return interactText;
+        canva.transform.GetChild(2).gameObject.SetActive(true); 
     }
 
     public void SetDialogues(List<string> dia){
