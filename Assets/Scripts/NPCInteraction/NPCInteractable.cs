@@ -18,6 +18,8 @@ public class NPCInteractable : InteractableObject
     public GameObject canva;
 
     [SerializeField] private string professeur;
+    [SerializeField] private List<GameObject> canvas = new List<GameObject>();
+    
     
 
     private void Awake()
@@ -25,7 +27,18 @@ public class NPCInteractable : InteractableObject
         animator = GetComponent<Animator>();
         npcLookAt = GetComponent<NPCLookAt>();
         fpscontroller = GetComponent<FirstPersonController>();
-        if(FirstPersonController.etape==0 && professeur == "doyen") {
+        if(FirstPersonController.etape == 0 && professeur == "doyen") {
+            foreach (GameObject canva in canvas)
+            {
+                canva.SetActive(false);
+            }
+            Interact(npcLookAt.transform);
+        }
+        if (FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2 && professeur == "mine") {
+            foreach (GameObject canva in canvas)
+            {
+                canva.SetActive(false);
+            }
             Interact(npcLookAt.transform);
         }
     }

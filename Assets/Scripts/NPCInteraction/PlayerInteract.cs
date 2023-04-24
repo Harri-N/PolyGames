@@ -10,6 +10,7 @@ public class PlayerInteract : MonoBehaviour
     private FirstPerson playerControls;
     private InputAction interaction;
     private FirstPersonController fpscontroller;
+    [SerializeField] private List<GameObject> canvas = new List<GameObject>();
 
     void Awake(){
         playerControls = new FirstPerson();
@@ -39,6 +40,10 @@ public class PlayerInteract : MonoBehaviour
             {
                 if(collider.TryGetComponent(out NPCInteractable npcInteractable)) {
                     //transform.LookAt(npcInteractable.head.transform);
+                    foreach (GameObject canva in canvas)
+                    {
+                        canva.SetActive(false);
+                    }
                     npcInteractable.Interact(transform);
                 }
 

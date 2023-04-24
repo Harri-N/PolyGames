@@ -104,6 +104,9 @@ namespace StarterAssets
 		static public bool Tuto4End = false;
 		static public bool Tuto5 = false;
 		static public bool Tuto5End = false;
+
+		//LoadScene
+		static public bool Couloir = false;
 		
 
 

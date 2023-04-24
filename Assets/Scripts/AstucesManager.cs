@@ -8,6 +8,7 @@ public class AstucesManager : MonoBehaviour
 {
     [SerializeField] private NPCInteractable NPCAstuces;
     [SerializeField] private TextMeshProUGUI Astuces;
+    [SerializeField] private TextMeshProUGUI Objectif;
     [SerializeField] private List<GameObject> canvas = new List<GameObject>();
     private FirstPersonController fpscontroller;
     [SerializeField] private GameLoader gameLoader;
@@ -34,8 +35,9 @@ public class AstucesManager : MonoBehaviour
             dia.Add("Pour interagir avec ton environnement, utilise la touche E de ton clavier ou le bouton X de ta manette.");
             NPCAstuces.SetDialogues(dia);
             string text = "Rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier et va parler à M.Young.";
-            float timewait = 2f;
-            StartCoroutine(ChangeAstuces(timewait, text));
+            string obj = "Objectif : Aller parler à M.Young.";
+            float timewait = 1f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));
         }
 
         if (FirstPersonController.MineTalkEnd && FirstPersonController.etape == 1)
@@ -48,8 +50,9 @@ public class AstucesManager : MonoBehaviour
             dia.Add("Pour frapper avec la pioche, utilise le clic gauche de ta souris ou la touche RB de ta manette.");
             NPCAstuces.SetDialogues(dia);
             string text = "Aller au fond de la grotte et casser des cailloux.";
-            float timewait = 1f;
-            StartCoroutine(ChangeAstuces(timewait, text));    
+            string obj = "Objectif : Récolter des cailloux.";
+            float timewait = 0f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
         if (FirstPersonController.MineGame && FirstPersonController.etape == 2)
@@ -58,16 +61,29 @@ public class AstucesManager : MonoBehaviour
             List<string> dia = new List<string>();
             dia.Add("Super ! Tu as pu récolter les cailloux. Allons les rapporter M. Young");
             NPCAstuces.SetDialogues(dia);
-            string text = "Va voir M. Reynolds à l'entrée du bâtiment principal.";
+            string text = "";
+            string obj = "";
             float timewait = 1f;
-            StartCoroutine(ChangeAstuces(timewait, text));   
+            StartCoroutine(ChangeAstuces(timewait, text, obj));   
+        }
+
+        if (FirstPersonController.MineTalkEnd2 && FirstPersonController.etape == 3)
+        {
+            FirstPersonController.etape += 1;
+            List<string> dia = new List<string>();
+            dia.Add("Maintenat que tu as réussi la 1ère épreuve, va rejoindre M. Reynolds. Il t’attend dans le hall. Tu peux rentrer dans le bâtiment par l’entrée principale.");
+            NPCAstuces.SetDialogues(dia);
+            string text = "Va voir M. Reynolds à l'entrée du bâtiment principal.";
+            string obj = "Objectif : Aller parler à M. Reynolds.";
+            float timewait = 1f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
         
 
 
     }
 
-    IEnumerator ChangeAstuces(float t, string text) {
+    IEnumerator ChangeAstuces(float t, string text, string obj) {
         yield return new WaitForSeconds(t);
         foreach (GameObject canva in canvas)
         {
@@ -75,6 +91,7 @@ public class AstucesManager : MonoBehaviour
         }
         NPCAstuces.Interact(NPCAstuces.GetLookAt().transform);
         Astuces.text = text;
+        Objectif.text = obj;
     }
 
 }

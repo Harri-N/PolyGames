@@ -51,7 +51,7 @@ public class Pioche : MonoBehaviour
 */
     public void Swing(InputAction.CallbackContext context)
     {
-        if (canSwing && Pickaxe)
+        if (canSwing && Pickaxe && !FirstPersonController.pause && !FirstPersonController.dialogue)
         {
             canSwing = false;
             StartCoroutine(swingDelay());
@@ -60,28 +60,24 @@ public class Pioche : MonoBehaviour
             float interactRange = 1f;
             Collider [] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
             foreach (Collider collider in colliderArray) {
+                if(collider.TryGetComponent(out Resource resource)) {    
+                    Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+                    RaycastHit hit;
 
-                if (!FirstPersonController.pause && !FirstPersonController.dialogue)
-                {
-                    if(collider.TryGetComponent(out Resource resource)) {    
-                        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-                        RaycastHit hit;
-
-                        if(Physics.Raycast(ray, out hit, 4))
-                        {
-                            //if(hit.transform.gameObject.GetComponent<AI>()) !=null)
-                            //{
-                                //hit.transform.gameObject.GetComponent<AI>().Damage(damage);
-                            //}
-                        }
-                        
-                    
-                        if(hit.collider.tag == "Rock")
-                        {
-                            hit.collider.GetComponent<Resource>().Tapped();
-                        }
-                        
+                    if(Physics.Raycast(ray, out hit, 4))
+                    {
+                        //if(hit.transform.gameObject.GetComponent<AI>()) !=null)
+                        //{
+                            //hit.transform.gameObject.GetComponent<AI>().Damage(damage);
+                        //}
                     }
+                    
+                
+                    if(hit.collider.tag == "Rock")
+                    {
+                        hit.collider.GetComponent<Resource>().Tapped();
+                    }
+                    
                 }
             }
         }

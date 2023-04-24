@@ -9,7 +9,7 @@ public class ObjectTake : InteractableObject
 {
     public virtual void Take()
     {
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 0f);
             
     }
 }
