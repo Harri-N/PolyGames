@@ -107,6 +107,8 @@ namespace StarterAssets
 
 		//LoadScene
 		static public bool Couloir = false;
+		static public bool Ho11 = false;
+		static public bool Ho12 = false;
 		
 
 
