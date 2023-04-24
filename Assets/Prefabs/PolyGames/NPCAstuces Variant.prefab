@@ -249,7 +249,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 150b771c021f45d48873c0d8caddd485,
         type: 3}
       propertyPath: m_Name
-      value: NPCAstuces
+      value: NPCAstuces Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 150b771c021f45d48873c0d8caddd485, type: 3}
@@ -279,11 +279,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: 
   dialogues: []
-  Nom: Glubulu
+  Nom: Qapi
   head: {fileID: 0}
   d_template: {fileID: 0}
   canva: {fileID: 0}
-  doyen: 0
+  professeur: 
+  canvas: []
 --- !u!114 &132509136
 MonoBehaviour:
   m_ObjectHideFlags: 0

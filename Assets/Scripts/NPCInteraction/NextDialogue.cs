@@ -116,7 +116,7 @@ public class NextDialogue : MonoBehaviour
                 //Gestion des étapes dans le jeu
                 if(FirstPersonController.Doyen && !FirstPersonController.DoyenEnd) {FirstPersonController.DoyenEnd = true;}
                 if(FirstPersonController.MineTalk && !FirstPersonController.MineTalkEnd) {gameLoader.ChangeScene("Mine"); }
-                if (FirstPersonController.MineGame && !FirstPersonController.MineTalk2) {gameLoader.ChangeScene("PlayGround");}
+                if (FirstPersonController.MineGame && !FirstPersonController.MineTalk2) {gameLoader.ChangeScene("Cour");}
                 if(FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2) {FirstPersonController.MineTalkEnd2 = true; }
 
                 if(FirstPersonController.Tuto1 && !FirstPersonController.Tuto1End) {FirstPersonController.Tuto1End = true;}

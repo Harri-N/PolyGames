@@ -34,7 +34,11 @@ public class NPCInteractable : InteractableObject
             }
             Interact(npcLookAt.transform);
         }
-        if (FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2 && professeur == "mine") {
+        
+    }
+    private void Update()
+    {
+        if (!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2 && professeur == "mine") {
             foreach (GameObject canva in canvas)
             {
                 canva.SetActive(false);

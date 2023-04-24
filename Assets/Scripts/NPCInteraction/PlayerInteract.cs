@@ -52,6 +52,7 @@ public class PlayerInteract : MonoBehaviour
                 }
 
                 if(collider.TryGetComponent(out ObjectTake objectTake)) {
+                    /*
                     Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
                     RaycastHit hit;
                     if(Physics.Raycast(ray, out hit, 4))
@@ -63,6 +64,9 @@ public class PlayerInteract : MonoBehaviour
                     {
                         hit.collider.GetComponent<ObjectTake>().Take();
                     }
+                    */
+                    objectTake.Take();
+
                 }
             }
 

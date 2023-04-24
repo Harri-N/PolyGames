@@ -19,13 +19,14 @@ public class CouloirLoad : MonoBehaviour
         if (FirstPersonController.Ho11)
         {
             player.transform.position = targetPosition11;
-            player.transform.Rotate(0,180,0);
+            player.transform.Rotate(0,-180,0);
             FirstPersonController.Ho11 = false;
         }
 
         else if (FirstPersonController.Ho12)
         {
             player.transform.position = targetPosition12;
+            //player.transform.Rotate(0,0,0);
             FirstPersonController.Ho12 = false;
         }
     }
