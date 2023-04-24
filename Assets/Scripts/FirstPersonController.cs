@@ -17,7 +17,7 @@ namespace StarterAssets
 		[Tooltip("Sprint speed of the character in m/s")]
 		public float SprintSpeed = 6.0f;
 		[Tooltip("Rotation speed of the character")]
-		public float RotationSpeed = 1.0f;
+		[Range(0f, 5f)] static public float RotationSpeed = 2.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 
@@ -51,6 +51,21 @@ namespace StarterAssets
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
 
+		[Header("Player Sound")]
+		public float m_StepInterval = 5f;
+        [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
+        [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
+        [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
+
+		[SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
+		private AudioSource m_AudioSource;
+		private float m_StepCycle;
+        private float m_NextStep;
+		static public bool m_IsWalking = false;
+		private bool m_Jumping;
+		private bool m_PreviouslyGrounded;
+
+
 		// cinemachine
 		private float _cinemachineTargetPitch;
 
@@ -69,9 +84,34 @@ namespace StarterAssets
 		static public bool pause = false;
 
 		// Success
+		static public int etape = 0;
 		static public bool Doyen = false;
 		static public bool DoyenEnd = false;
-		static public bool Mines = false;
+		static public bool MineTalk = false;
+		static public bool MineTalkEnd = false;
+		static public bool MineGame = false;
+		static public bool MineTalk2 = false;
+		static public bool MineTalkEnd2 = false;
+		
+		// Tuto
+		static public bool Tuto1 = false;
+		static public bool Tuto1End = false;
+		static public bool Tuto2 = false;
+		static public bool Tuto2End = false;
+		static public bool Tuto3 = false;
+		static public bool Tuto3End = false;
+		static public bool Tuto4 = false;
+		static public bool Tuto4End = false;
+		static public bool Tuto5 = false;
+		static public bool Tuto5End = false;
+
+		//LoadScene
+		static public bool Couloir = false;
+		static public bool Ho11 = false;
+		static public bool Ho12 = false;
+		
+
+
 
 
 	
@@ -111,6 +151,7 @@ namespace StarterAssets
 			_input = GetComponent<StarterAssetsInputs>();
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 			_playerInput = GetComponent<PlayerInput>();
+			m_AudioSource = GetComponent<AudioSource>();
 #else
 			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
@@ -126,6 +167,14 @@ namespace StarterAssets
 				JumpAndGravity();
 				GroundedCheck();
 				Move();
+
+			if (!m_PreviouslyGrounded && Grounded)
+            {
+                PlayLandingSound();
+                m_Jumping = false;
+            }
+
+            m_PreviouslyGrounded = Grounded;
 			}
 		}
 
@@ -164,6 +213,41 @@ namespace StarterAssets
 				transform.Rotate(Vector3.up * _rotationVelocity);
 			}
 		}
+
+		 private void ProgressStepCycle(float speed)
+        {
+            if (_controller.velocity.sqrMagnitude > 0 && (_input.move.x != 0 || _input.move.y != 0))
+            {
+                m_StepCycle += (_controller.velocity.magnitude + (speed*(m_IsWalking ? 1f : m_RunstepLenghten)))*
+                             Time.fixedDeltaTime;
+            }
+
+            if (!(m_StepCycle > m_NextStep))
+            {
+                return;
+            }
+
+            m_NextStep = m_StepCycle + m_StepInterval;
+
+            PlayFootStepAudio();
+        }
+
+
+        private void PlayFootStepAudio()
+        {
+            if (!Grounded)
+            {
+                return;
+            }
+            // pick & play a random footstep sound from the array,
+            // excluding sound at index 0
+            int n = Random.Range(1, m_FootstepSounds.Length);
+            m_AudioSource.clip = m_FootstepSounds[n];
+            m_AudioSource.PlayOneShot(m_AudioSource.clip);
+            // move picked sound to index 0 so it's not picked next time
+            m_FootstepSounds[n] = m_FootstepSounds[0];
+            m_FootstepSounds[0] = m_AudioSource.clip;
+        }
 
 		private void Move()
 		{
@@ -206,11 +290,26 @@ namespace StarterAssets
 			{
 				// move
 				inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
+				m_IsWalking = true;
+				//ProgressStepCycle(_speed);
 			}
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 		}
+
+		private void PlayLandingSound()
+        {
+            m_AudioSource.clip = m_LandSound;
+            m_AudioSource.Play();
+            m_NextStep = m_StepCycle + .5f;
+        }
+
+		private void PlayJumpSound()
+        {
+            m_AudioSource.clip = m_JumpSound;
+            m_AudioSource.Play();
+        }
 
 		private void JumpAndGravity()
 		{
@@ -230,6 +329,8 @@ namespace StarterAssets
 				{
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+					//PlayJumpSound();
+					m_Jumping = true;
 				}
 
 				// jump timeout
@@ -277,6 +378,14 @@ namespace StarterAssets
 
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
+		}
+
+		public float GetSpeed() {
+			return _speed;
+		}
+
+		public void SetRotationSpeed(float rspeed) {
+			RotationSpeed = rspeed;
 		}
 	}
 }

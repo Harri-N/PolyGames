@@ -44,17 +44,16 @@ public class PauseController : MonoBehaviour
         if(gameIsPaused)
         {
             ActivateMenu();
-            FirstPersonController.pause = true;
         }
         else 
         {
             DeactivateMenu();
-            FirstPersonController.pause = false;   
         }
     }
 
     public void ActivateMenu()
     {
+        FirstPersonController.pause = true;
         Time.timeScale = 0f;
         AudioListener.pause = true;
         PauseMenu.SetActive(true);
@@ -65,6 +64,7 @@ public class PauseController : MonoBehaviour
     }
     public void DeactivateMenu()
     {
+        FirstPersonController.pause = false;
         Time.timeScale = 1;
         AudioListener.pause = false;
         controller.OpenPanel(PanelType.Main);
