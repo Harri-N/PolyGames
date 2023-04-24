@@ -26,7 +26,7 @@ public class AstucesManager : MonoBehaviour
             FirstPersonController.etape += 1;
             FirstPersonController.Tuto1 = true;
             List<string> dia = new List<string>();
-            dia.Add("Bonjour ! Je me présente, je m’appelle Glubulu et je fais partie de la cellule de pédagogie facultaire QAP-Polytech.");
+            dia.Add("Bonjour ! Je me présente, je m’appelle Qapi et je fais partie de la cellule de pédagogie facultaire QAP-Polytech.");
             dia.Add("À la Polytech de Mons, nous avons mis en place un dispositif de réussite pour les nouveaux jeunes arrivants. C’est pourquoi je serai là pour t’accompagner et te conseiller tout au long de ton aventure.");
             dia.Add("N’hésite pas à me consulter en appuyant sur le bouton start ou la touche Tab. Tu trouveras dans la rubrique « astuces » un rappel de la mission en cours.");
             dia.Add("Pour commencer, rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier, tu trouvera M. Goderniaux. Il te donnera la 1ère épreuve.");

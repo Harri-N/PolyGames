@@ -21,7 +21,7 @@ public class CourLoad : MonoBehaviour
         if (FirstPersonController.MineGame)
         {
             player.transform.position = targetPosition;
-            player.transform.Rotate(0,-84,0);
+            player.transform.Rotate(0,-90,0);
             List<string> dia = new List<string>();
             dia.Add("Merci d'avoir récupéré ces matériaux. Nous les utiliserons pour t'aider dans ta quête.");
             mineGuy.SetDialogues(dia);
