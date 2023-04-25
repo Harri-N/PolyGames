@@ -9,6 +9,7 @@ public class NPCInteractable : InteractableObject
 {
     [SerializeField] private List<string> dialogues = new List<string>();
     [SerializeField] private string Nom;
+    [SerializeField] private GameObject player; 
     public GameObject head;
     private FirstPersonController fpscontroller;
     private Animator animator;
@@ -32,7 +33,7 @@ public class NPCInteractable : InteractableObject
             {
                 canva.SetActive(false);
             }
-            Interact(npcLookAt.transform);
+            Interact(player.transform);
         }
         
     }
@@ -43,7 +44,7 @@ public class NPCInteractable : InteractableObject
             {
                 canva.SetActive(false);
             }
-            Interact(npcLookAt.transform);
+            Interact(player.transform);
         }
     }
 

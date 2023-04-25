@@ -19,7 +19,7 @@ public class CouloirLoad : MonoBehaviour
         if (FirstPersonController.Ho11)
         {
             player.transform.position = targetPosition11;
-            player.transform.Rotate(0,-180,0);
+            player.transform.Rotate(0,90,0);
             FirstPersonController.Ho11 = false;
         }
 

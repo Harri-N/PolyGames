@@ -370,7 +370,7 @@ public partial class @FirstPerson: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1092fdc0-e8e9-40c8-92d3-95e8a8edd979"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -382,6 +382,17 @@ public partial class @FirstPerson: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""a8b872cb-dc6d-44b2-a3f1-c06281301bbe"",
                     ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8ad5973f-d595-41bd-bc74-5752901eb6e5"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

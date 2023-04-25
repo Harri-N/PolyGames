@@ -6505,7 +6505,7 @@ GameObject:
   - component: {fileID: 3729520889163347344}
   - component: {fileID: 3729520889163347345}
   m_Layer: 5
-  m_Name: A_xbox
+  m_Name: B_xbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6559,7 +6559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300040, guid: e35b1509688e6294cad1ada6c91b7693, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a7c5c2b48513b94cb544ec33e2293c1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12590,7 +12590,7 @@ GameObject:
   - component: {fileID: 3729520889881186875}
   - component: {fileID: 3729520889881186872}
   m_Layer: 5
-  m_Name: RB
+  m_Name: RT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12644,7 +12644,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1b1f2c6c6dcaf8546aa370a0f2a4ca55, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7abc3cdda34cb2b47b12d051ad43c5b6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15555,7 +15555,7 @@ GameObject:
   - component: {fileID: 3729520890204205405}
   - component: {fileID: 3729520890204205402}
   m_Layer: 5
-  m_Name: A_xbox
+  m_Name: B_xbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15609,7 +15609,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300040, guid: e35b1509688e6294cad1ada6c91b7693, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a7c5c2b48513b94cb544ec33e2293c1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
