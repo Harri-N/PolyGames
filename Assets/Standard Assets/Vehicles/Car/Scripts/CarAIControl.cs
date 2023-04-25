@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-#pragma warning disable 649
 namespace UnityStandardAssets.Vehicles.Car
 {
     [RequireComponent(typeof (CarController))]
