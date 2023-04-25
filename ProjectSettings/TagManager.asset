@@ -7,6 +7,8 @@ TagManager:
   - CinemachineTarget
   - Rock
   - LittleRock
+  - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,9 +20,9 @@ TagManager:
   - 
   - Character
   - Ground
-  - 
-  - 
-  - 
+  - WhatIsEnemy
+  - WhatIsPlayer
+  - WhatIsBullet
   - 
   - 
   - 
