@@ -25,7 +25,7 @@ public class CarInteractable : InteractableObject
     }
 
     // Update is called once per frame
-    void EnterCar()
+    public void EnterCar()
     {
         //Si on entre dans la voitue
         if(!isInside)

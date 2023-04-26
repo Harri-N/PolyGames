@@ -68,6 +68,10 @@ public class PlayerInteract : MonoBehaviour
                     objectTake.Take();
 
                 }
+
+                if(collider.TryGetComponent(out CarInteractable car)) {
+                    car.EnterCar();
+                }
             }
 
             
