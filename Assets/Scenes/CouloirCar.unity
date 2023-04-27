@@ -4029,6 +4029,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6138559116510816457, guid: 2350aacc96f3f9c43b34a5b6630fed60,
+        type: 3}
+      propertyPath: engineSoundStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7713957348207865559, guid: 2350aacc96f3f9c43b34a5b6630fed60,
         type: 3}
       propertyPath: m_Name
