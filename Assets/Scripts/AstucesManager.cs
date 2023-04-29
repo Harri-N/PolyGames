@@ -79,7 +79,7 @@ public class AstucesManager : MonoBehaviour
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
-        if (FirstPersonController.MecaTalkEnd && FirstPersonController.etape == 0)
+        if (FirstPersonController.MecaTalkEnd && FirstPersonController.etape == 4)
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
@@ -91,7 +91,7 @@ public class AstucesManager : MonoBehaviour
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
-        if (FirstPersonController.MecaGame && FirstPersonController.etape == 1)
+        if (FirstPersonController.MecaGame && FirstPersonController.etape == 5)
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
