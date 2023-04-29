@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Couloir.unity
     guid: 781befa8e5fcd174a9d8ee81aa720180
   - enabled: 1
+    path: Assets/Scenes/CouloirCar.unity
+    guid: a45063f04fc6c314ca6cbbb0536fdd4d
+  - enabled: 1
     path: Assets/Scenes/Ho11.unity
     guid: 9db358ae2d3f4334eb146b19a823c8c9
   - enabled: 1

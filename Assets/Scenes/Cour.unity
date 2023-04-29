@@ -2487,7 +2487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: Rentrer dans le hall
   gameLoader: {fileID: 1396080997}
-  scene: Couloir
+  scene: CouloirCar
 --- !u!65 &1648211754
 BoxCollider:
   m_ObjectHideFlags: 0
