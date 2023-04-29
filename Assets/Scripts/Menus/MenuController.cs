@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using StarterAssets;
 
 public enum PanelType
 {
@@ -53,6 +54,7 @@ public class MenuController : MonoBehaviour
 
     public void ChangeScene(string _sceneName){
         gameLoader.ChangeScene(_sceneName);
+        if(_sceneName == "Demarrage") {FirstPersonController.Restart();}
     }
 
     public void Quit()

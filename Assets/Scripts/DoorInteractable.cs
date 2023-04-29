@@ -13,4 +13,9 @@ public class DoorInteractable : InteractableObject
         Debug.Log("Door");
         gameLoader.ChangeScene(scene);
     }
+
+    public void SetScene(string scn)
+    {
+        scene = scn;
+    }
 }

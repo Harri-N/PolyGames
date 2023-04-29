@@ -9,12 +9,14 @@ public class CouloirCarLoad : MonoBehaviour
     private FirstPersonController fpscontroller;
     private void Awake() {
         fpscontroller = GetComponent<FirstPersonController>();
-        FirstPersonController.MecaTalk = true;
-        transform.GetChild(2).position = car.transform.position;
+        if (FirstPersonController.etape == 4) {FirstPersonController.MecaTalk = true;}
+        transform.Find("StartPoint").position = car.transform.position;
+        transform.Find("StartPoint").rotation = car.transform.rotation;
     }
 
-    public void Reset() {
-        car.transform.position = transform.GetChild(2).position;
-        car.transform.rotation =  Quaternion.Euler(0f, 0f, 0f); 
+    public void Reset()
+    {
+        car.transform.position = transform.Find("StartPoint").position;
+        car.transform.rotation =  transform.Find("StartPoint").rotation;
     }
 }

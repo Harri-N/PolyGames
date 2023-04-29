@@ -85,6 +85,7 @@ namespace StarterAssets
 
 		// Success
 		static public int etape = 0;
+		static public bool GameOver = false;
 		static public bool Doyen = false;
 		static public bool DoyenEnd = false;
 		static public bool MineTalk = false;
@@ -116,6 +117,41 @@ namespace StarterAssets
 		static public bool Ho11 = false;
 		static public bool Ho12 = false;
 		
+		static public void Restart()
+		{
+			etape = 0;
+			GameOver = false;
+			Doyen = false;
+			DoyenEnd = false;
+			MineTalk = false;
+			MineTalkEnd = false;
+			MineGame = false;
+			MineTalk2 = false;
+			MineTalkEnd2 = false;
+			MecaTalk = false;
+			MecaTalkEnd = false;
+			MecaGame = false;
+			MathTalk = false;
+			MathTalkEnd = false;
+			MathGame = false;
+			
+			// Tuto
+			Tuto1 = false;
+			Tuto1End = false;
+			Tuto2 = false;
+			Tuto2End = false;
+			Tuto3 = false;
+			Tuto3End = false;
+			Tuto4 = false;
+			Tuto4End = false;
+			Tuto5 = false;
+			Tuto5End = false;
+
+			//LoadScene
+			Couloir = false;
+			Ho11 = false;
+			Ho12 = false;
+		}
 
 
 

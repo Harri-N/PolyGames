@@ -29,6 +29,14 @@ public class CouloirLoad : MonoBehaviour
             player.transform.rotation = Quaternion.Euler(0f, 0f, 0f); 
             FirstPersonController.Ho12 = false;
         }
+        transform.Find("StartPoint").position = player.transform.position;
+        transform.Find("StartPoint").rotation = player.transform.rotation;
+    }
+    
+    public void Reset()
+    {
+        player.transform.position = transform.Find("StartPoint").position;
+        player.transform.rotation =  transform.Find("StartPoint").rotation;
     }
 
 }

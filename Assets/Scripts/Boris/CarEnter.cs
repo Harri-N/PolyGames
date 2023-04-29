@@ -15,7 +15,7 @@ public class CarEnter : MonoBehaviour
     private bool canEnter;
     private bool isInside;
     private AudioSource[] carAudio;
-    //private float timeLeft;
+    private float timeLeft;
     //private bool canLeave = false;
 
     private StarterAssets.FirstPersonController fpscontroller;
@@ -23,6 +23,7 @@ public class CarEnter : MonoBehaviour
     private void Awake() {
         fpscontroller = GetComponent<StarterAssets.FirstPersonController>();
         isInside = false;
+        timeLeft = 60f;
     }
 
     // Start is called before the first frame update
@@ -30,7 +31,6 @@ public class CarEnter : MonoBehaviour
     {
         car = transform.parent.gameObject;
         player = GameObject.FindGameObjectWithTag("Player");
-        //timeLeft = 1f;
     }
 
     // Update is called once per frame
@@ -54,7 +54,6 @@ public class CarEnter : MonoBehaviour
 
             car.GetComponent<CarAudio>().enabled = true;
 
-            //timeLeft = 1f;
 
             //On r�cup�re et on active toutes les audios sources
             carAudio = car.GetComponents<AudioSource>();
@@ -77,6 +76,16 @@ public class CarEnter : MonoBehaviour
                     
                 }
             }
+        if(isInside && timeLeft > 0)
+        {
+            timeLeft -= Time.deltaTime;
+            if (timeLeft == 0 && !StarterAssets.FirstPersonController.MecaGame)
+            {
+                StarterAssets.FirstPersonController.GameOver = true;
+                isInside = false;
+                timeLeft = 60f;
+            }
+        }
 
             
             
