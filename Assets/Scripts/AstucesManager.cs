@@ -21,6 +21,7 @@ public class AstucesManager : MonoBehaviour
 
     void Update()
     {
+        if (FirstPersonController.GameOver) {FirstPersonController.GameOver = false; gameLoader.ChangeScene("GameOver");}
         if (FirstPersonController.DoyenEnd && FirstPersonController.etape == 0)
         {
             FirstPersonController.etape += 1;
@@ -79,7 +80,7 @@ public class AstucesManager : MonoBehaviour
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
-        if (FirstPersonController.MecaTalkEnd && FirstPersonController.etape == 4)
+        if (FirstPersonController.MecaTalkEnd && FirstPersonController.etape == 0)
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
@@ -91,7 +92,7 @@ public class AstucesManager : MonoBehaviour
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
-        if (FirstPersonController.MecaGame && FirstPersonController.etape == 5)
+        if (FirstPersonController.MecaGame && FirstPersonController.etape == 1)
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();

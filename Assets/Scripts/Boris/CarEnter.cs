@@ -5,6 +5,7 @@ using UnityStandardAssets.Vehicles.Car;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEditor;
 using StarterAssets;
+using TMPro;
 
 public class CarEnter : MonoBehaviour
 {
@@ -15,15 +16,17 @@ public class CarEnter : MonoBehaviour
     private bool canEnter;
     private bool isInside;
     private AudioSource[] carAudio;
-    private float timeLeft;
+    private float timeLeft = 600.0f;
+    private float timer = 0.0f;
     //private bool canLeave = false;
+    [SerializeField] private TextMeshProUGUI TimerText;
 
     private StarterAssets.FirstPersonController fpscontroller;
     
     private void Awake() {
         fpscontroller = GetComponent<StarterAssets.FirstPersonController>();
         isInside = false;
-        timeLeft = 60f;
+        Time.timeScale = 1.0f;
     }
 
     // Start is called before the first frame update
@@ -76,19 +79,26 @@ public class CarEnter : MonoBehaviour
                     
                 }
             }
-        if(isInside && timeLeft > 0)
+        /*            
+        if(isInside && StarterAssets.FirstPersonController.MecaGameBegin)
         {
+            Time.timeScale = 1.0f;
             timeLeft -= Time.deltaTime;
-            if (timeLeft == 0 && !StarterAssets.FirstPersonController.MecaGame)
+            Display(timeLeft);
+            if (timeLeft < 0f && !StarterAssets.FirstPersonController.MecaGame)
             {
                 StarterAssets.FirstPersonController.GameOver = true;
-                isInside = false;
-                timeLeft = 60f;
             }
         }
-
+        */
             
             
         }
+    }
+    private void Display(float timeToDisplay)
+    {
+        float minutes = Mathf.FloorToInt(timeToDisplay/60);
+        float seconds = Mathf.FloorToInt(timeToDisplay%60);
+        TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

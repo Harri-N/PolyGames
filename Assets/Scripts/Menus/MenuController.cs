@@ -54,7 +54,6 @@ public class MenuController : MonoBehaviour
 
     public void ChangeScene(string _sceneName){
         gameLoader.ChangeScene(_sceneName);
-        if(_sceneName == "Demarrage") {FirstPersonController.Restart();}
     }
 
     public void Quit()

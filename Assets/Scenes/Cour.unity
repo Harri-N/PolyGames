@@ -220,7 +220,7 @@ PrefabInstance:
     - target: {fileID: 8972500206103875314, guid: c5778897a14651c429d72ecf2bef085b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.57
+      value: -31.92
       objectReference: {fileID: 0}
     - target: {fileID: 8972500206103875314, guid: c5778897a14651c429d72ecf2bef085b,
         type: 3}
@@ -272,6 +272,11 @@ PrefabInstance:
       propertyPath: mineGuy
       value: 
       objectReference: {fileID: 1278037652}
+    - target: {fileID: 8972500206765344523, guid: c5778897a14651c429d72ecf2bef085b,
+        type: 3}
+      propertyPath: porteEntree
+      value: 
+      objectReference: {fileID: 1648211753}
     - target: {fileID: 8972500206765344523, guid: c5778897a14651c429d72ecf2bef085b,
         type: 3}
       propertyPath: canvas.Array.data[0]

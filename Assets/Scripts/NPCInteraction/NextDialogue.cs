@@ -120,6 +120,7 @@ public class NextDialogue : MonoBehaviour
                 if (FirstPersonController.MineGame && !FirstPersonController.MineTalk2) {gameLoader.ChangeScene("Cour"); gameObject.SetActive(false);}
                 if(FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2) {FirstPersonController.MineTalkEnd2 = true; gameObject.SetActive(false); }
                 if(FirstPersonController.MecaTalk && !FirstPersonController.MecaTalkEnd) {StartCoroutine(Transition()); }
+                if(FirstPersonController.MecaTalkEnd && !FirstPersonController.MecaGameBegin) {FirstPersonController.MecaGameBegin = true; }
                 if (FirstPersonController.MecaGame && !FirstPersonController.MathTalk) {gameLoader.ChangeScene("Ho12"); gameObject.SetActive(false);}
 
                 if(FirstPersonController.Tuto1 && !FirstPersonController.Tuto1End) {FirstPersonController.Tuto1End = true; gameObject.SetActive(false);}

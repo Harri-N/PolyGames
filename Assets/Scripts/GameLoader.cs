@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using StarterAssets;
 
 public class GameLoader : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class GameLoader : MonoBehaviour
     }
 
     IEnumerator LoadLevel(string _sceneName) {
+        if(_sceneName == "Demarrage") {FirstPersonController.Restart();}
         transition.SetTrigger("FadeOut");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(_sceneName);
