@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEditor;
-
+using StarterAssets;
 
 public class CarEnter : MonoBehaviour
 {
@@ -15,22 +15,29 @@ public class CarEnter : MonoBehaviour
     private bool canEnter;
     private bool isInside;
     private AudioSource[] carAudio;
-    private float timeLeft;
-    private bool canLeave = false;
+    //private float timeLeft;
+    //private bool canLeave = false;
+
+    private StarterAssets.FirstPersonController fpscontroller;
+    
+    private void Awake() {
+        fpscontroller = GetComponent<StarterAssets.FirstPersonController>();
+        isInside = false;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         car = transform.parent.gameObject;
         player = GameObject.FindGameObjectWithTag("Player");
-        timeLeft = 1f;
+        //timeLeft = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Si on entre dans la voitue
-        if(canEnter && Input.GetKeyDown("e"))
+        if(StarterAssets.FirstPersonController.MecaTalkEnd && !isInside)
         {
             isInside = true;
 
@@ -42,18 +49,14 @@ public class CarEnter : MonoBehaviour
             car.GetComponent<CarController>().enabled = true;
             car.GetComponent<CarUserControl>().enabled = true;
 
-            //car.GetComponent<MyCarController>().enabled = true;  Autre script pour controller la voiture (moins soffistiqué)
+            //car.GetComponent<MyCarController>().enabled = true;  Autre script pour controller la voiture (moins soffistiquï¿½)
             //car.GetComponent<PlayerController>().enabled = true;
 
             car.GetComponent<CarAudio>().enabled = true;
 
-            timeLeft = 1f;
+            //timeLeft = 1f;
 
-
-
-
-
-            //On récupère et on active toutes les audios sources
+            //On rï¿½cupï¿½re et on active toutes les audios sources
             carAudio = car.GetComponents<AudioSource>();
 
             foreach(AudioSource single in carAudio)
@@ -63,61 +66,20 @@ public class CarEnter : MonoBehaviour
             
         }
 
-        //Si on sort de la voiture
-        if(isInside && canLeave && Input.GetKeyDown("e"))
-        {
-            player.transform.parent = null;
-            player.SetActive(true);
+        float interactRange = 5f;
+        Collider [] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+        foreach (Collider collider in colliderArray) {
 
-            carCamera.SetActive(false);
-            
-            car.GetComponent<CarController>().enabled = false;
-            car.GetComponent<CarUserControl>().enabled = false;
-
-            //car.GetComponent<MyCarController>().enabled = false;
-            //car.GetComponent<PlayerController>().enabled = false;
-
-            car.GetComponent<CarAudio>().enabled = false;
-            
-            isInside = false;
-            canLeave = false;
-            timeLeft = 1f;
-
-            
-            foreach (AudioSource single in carAudio)
+            if (!StarterAssets.FirstPersonController.pause && !StarterAssets.FirstPersonController.dialogue && isInside)
             {
-                single.enabled = false;
+                if(collider.TryGetComponent(out DoorInteractable doorInteractable)) {
+                    StarterAssets.FirstPersonController.MecaGame = true;
+                    
+                }
             }
+
             
-        }
-      
-        //Délais d'attente entre l'entrée et la sortie de la voiture
-        //Permet aussi d'utiliser la même touche pour entrer et sortir
-        if(timeLeft > 0 && isInside)
-        {
-            timeLeft -= Time.deltaTime;
-            canLeave = false;
-        }
-        else if(timeLeft <= 0 && isInside)
-        {
-            canLeave = true;
-        }
-    }
-
-    //Detection du joueur dans le cube d'entrée
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Player")
-        {
-            canEnter = true;
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            canEnter = false;
+            
         }
     }
 }

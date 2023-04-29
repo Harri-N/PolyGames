@@ -78,6 +78,30 @@ public class AstucesManager : MonoBehaviour
             float timewait = 1f;
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
+
+        if (FirstPersonController.MecaTalkEnd && FirstPersonController.etape == 0)
+        {
+            FirstPersonController.etape += 1;
+            List<string> dia = new List<string>();
+            dia.Add("Pour sortir de la faille spatio-temporelle, dirige-toi vers l'auditoire 12. Il se trouve au 1er étage et au fond du couloir de droite.");
+            NPCAstuces.SetDialogues(dia);
+            string text = "Aller à l'auditoire 12. Il se trouve au 1er étage et au fond du couloir de droite.";
+            string obj = "Objectif : Aller à l'auditoire 12.";
+            float timewait = 0f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));    
+        }
+
+        if (FirstPersonController.MecaGame && FirstPersonController.etape == 1)
+        {
+            FirstPersonController.etape += 1;
+            List<string> dia = new List<string>();
+            dia.Add("Super, tu es arrivé à temps ! Rentrons vite à l'intérieur.");
+            NPCAstuces.SetDialogues(dia);
+            string text = "";
+            string obj = "";
+            float timewait = 0f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));    
+        }
         
 
 

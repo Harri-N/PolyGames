@@ -92,6 +92,12 @@ namespace StarterAssets
 		static public bool MineGame = false;
 		static public bool MineTalk2 = false;
 		static public bool MineTalkEnd2 = false;
+		static public bool MecaTalk = false;
+		static public bool MecaTalkEnd = false;
+		static public bool MecaGame = false;
+		static public bool MathTalk = false;
+		static public bool MathTalkEnd = false;
+		static public bool MathGame = false;
 		
 		// Tuto
 		static public bool Tuto1 = false;

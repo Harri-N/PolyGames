@@ -39,7 +39,8 @@ public class NPCInteractable : InteractableObject
     }
     private void Update()
     {
-        if (!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2 && professeur == "mine") {
+        if ((!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2 && professeur == "mine") 
+        || (!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.MecaTalk && !FirstPersonController.MecaTalkEnd && professeur == "meca") ) {
             foreach (GameObject canva in canvas)
             {
                 canva.SetActive(false);

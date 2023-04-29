@@ -14,6 +14,8 @@ public class NextDialogue : MonoBehaviour
     private FirstPersonController fpscontroller;
     private GameObject boxTuto;
 
+    public Animator transition;
+
     static public int index = 3;
     private bool fin = false;
 
@@ -84,8 +86,7 @@ public class NextDialogue : MonoBehaviour
             //Si on arrive à la fin de la discussion
             else 
             {
-                //On rend inactif le canva
-                gameObject.SetActive(false);
+                
 
                 //On reset l'animation des NPC
                 foreach (Animator animator in NPCs) {
@@ -114,15 +115,26 @@ public class NextDialogue : MonoBehaviour
                 }
 
                 //Gestion des étapes dans le jeu
-                if(FirstPersonController.Doyen && !FirstPersonController.DoyenEnd) {FirstPersonController.DoyenEnd = true;}
-                if(FirstPersonController.MineTalk && !FirstPersonController.MineTalkEnd) {gameLoader.ChangeScene("Mine"); }
-                if (FirstPersonController.MineGame && !FirstPersonController.MineTalk2) {gameLoader.ChangeScene("Cour");}
-                if(FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2) {FirstPersonController.MineTalkEnd2 = true; }
+                if(FirstPersonController.Doyen && !FirstPersonController.DoyenEnd) {FirstPersonController.DoyenEnd = true; gameObject.SetActive(false);}
+                if(FirstPersonController.MineTalk && !FirstPersonController.MineTalkEnd) {gameLoader.ChangeScene("Mine"); gameObject.SetActive(false);}
+                if (FirstPersonController.MineGame && !FirstPersonController.MineTalk2) {gameLoader.ChangeScene("Cour"); gameObject.SetActive(false);}
+                if(FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2) {FirstPersonController.MineTalkEnd2 = true; gameObject.SetActive(false); }
+                if(FirstPersonController.MecaTalk && !FirstPersonController.MecaTalkEnd) {StartCoroutine(Transition()); }
+                if (FirstPersonController.MecaGame && !FirstPersonController.MathTalk) {gameLoader.ChangeScene("Ho12"); gameObject.SetActive(false);}
 
-                if(FirstPersonController.Tuto1 && !FirstPersonController.Tuto1End) {FirstPersonController.Tuto1End = true;}
-                if(FirstPersonController.Tuto2 && !FirstPersonController.Tuto2End) {FirstPersonController.Tuto2End = true;}
+                if(FirstPersonController.Tuto1 && !FirstPersonController.Tuto1End) {FirstPersonController.Tuto1End = true; gameObject.SetActive(false);}
+                if(FirstPersonController.Tuto2 && !FirstPersonController.Tuto2End) {FirstPersonController.Tuto2End = true; gameObject.SetActive(false);}
             }
             
         }
+    }
+
+    IEnumerator Transition() {
+        transition.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(1f);
+        FirstPersonController.MecaTalkEnd = true;
+        DestroyImmediate(transform.GetChild(2).gameObject);
+        transition.ResetTrigger("FadeOut");
+        gameObject.SetActive(false);
     }
 }
