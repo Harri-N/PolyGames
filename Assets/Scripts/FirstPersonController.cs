@@ -101,6 +101,9 @@ namespace StarterAssets
 		static public bool MathTalk = false;
 		static public bool MathTalkEnd = false;
 		static public bool MathGame = false;
+
+		static public bool FortempsTalk = false;
+		static public bool FortempsTalkEnd = false;
 		
 		// Tuto
 		static public bool Tuto1 = false;
@@ -136,6 +139,8 @@ namespace StarterAssets
 			MathTalk = false;
 			MathTalkEnd = false;
 			MathGame = false;
+			FortempsTalk = false;
+			FortempsTalkEnd = false;
 			
 			// Tuto
 			Tuto1 = false;

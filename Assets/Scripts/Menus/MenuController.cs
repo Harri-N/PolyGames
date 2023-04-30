@@ -12,6 +12,8 @@ public enum PanelType
     Astuces,
     Parametres,
     Commandes,
+    Fail,
+    Success
 
 }
 

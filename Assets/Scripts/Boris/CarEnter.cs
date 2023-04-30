@@ -90,7 +90,7 @@ public class CarEnter : MonoBehaviour
                 StarterAssets.FirstPersonController.GameOver = true;
             }
         }
-        */
+        */                              
             
             
         }

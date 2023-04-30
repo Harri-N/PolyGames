@@ -66,6 +66,9 @@ public class NPCInteractable : InteractableObject
             case "mine":
                 FirstPersonController.MineTalk = true;
                 break;
+            case "math":
+                FirstPersonController.MathTalk = true;
+                break;
         }
         Debug.Log("Interact!");
         animator.SetTrigger("Talk");

@@ -80,7 +80,7 @@ public class AstucesManager : MonoBehaviour
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
-        if (FirstPersonController.MecaTalkEnd && FirstPersonController.etape == 0)
+        if (FirstPersonController.MecaTalkEnd && FirstPersonController.etape == 4)
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
@@ -92,7 +92,7 @@ public class AstucesManager : MonoBehaviour
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
-        if (FirstPersonController.MecaGame && FirstPersonController.etape == 1)
+        if (FirstPersonController.MecaGame && FirstPersonController.etape == 5)
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
@@ -103,8 +103,18 @@ public class AstucesManager : MonoBehaviour
             float timewait = 0f;
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
-        
 
+        if (FirstPersonController.MathGame && FirstPersonController.etape == 6)
+        {
+            FirstPersonController.etape += 1;
+            List<string> dia = new List<string>();
+            dia.Add("GG Bro.");
+            NPCAstuces.SetDialogues(dia);
+            string text = "";
+            string obj = "";
+            float timewait = 0f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));    
+        }
 
     }
 
