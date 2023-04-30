@@ -223,6 +223,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6137907}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &12327149 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4905481119761819166, guid: 2350aacc96f3f9c43b34a5b6630fed60,
+    type: 3}
+  m_PrefabInstance: {fileID: 1445322367}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &20127993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,6 +2748,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &823717641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 946831172789351085, guid: 2350aacc96f3f9c43b34a5b6630fed60,
+    type: 3}
+  m_PrefabInstance: {fileID: 1445322367}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &823717643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823717641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f06ba2d3e3e5b4095dc4685a2ff20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactText: Entrer dans la voiture
+  player: {fileID: 1211667023}
+  car: {fileID: 1823859546}
+  carCamera: {fileID: 12327149}
+  TimerText: {fileID: 888729105}
 --- !u!1 &833452414
 GameObject:
   m_ObjectHideFlags: 0
@@ -5351,7 +5380,7 @@ PrefabInstance:
     - target: {fileID: 4356124406177926161, guid: 2350aacc96f3f9c43b34a5b6630fed60,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4905481119761819166, guid: 2350aacc96f3f9c43b34a5b6630fed60,
         type: 3}
@@ -6781,6 +6810,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792759948}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1823859546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7713957348207865559, guid: 2350aacc96f3f9c43b34a5b6630fed60,
+    type: 3}
+  m_PrefabInstance: {fileID: 1445322367}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1903820488
 GameObject:
   m_ObjectHideFlags: 0

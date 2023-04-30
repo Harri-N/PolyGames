@@ -95,6 +95,7 @@ namespace StarterAssets
 		static public bool MineTalkEnd2 = false;
 		static public bool MecaTalk = false;
 		static public bool MecaTalkEnd = false;
+		static public bool MecaCar = false;
 		static public bool MecaGameBegin = false;
 		static public bool MecaGame = false;
 		
@@ -135,6 +136,7 @@ namespace StarterAssets
 			MineTalkEnd2 = false;
 			MecaTalk = false;
 			MecaTalkEnd = false;
+			MecaCar = false;
 			MecaGame = false;
 			MathTalk = false;
 			MathTalkEnd = false;

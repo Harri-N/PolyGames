@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEditor;
+using TMPro;
 
 public class CarInteractable : InteractableObject
 {
@@ -16,6 +17,10 @@ public class CarInteractable : InteractableObject
     private float timeLeft;
     private bool canLeave = false;
     private Collider collider;
+
+    private float timeRemaining = 60.0f;
+    private float timer = 0.0f;
+    [SerializeField] private TextMeshProUGUI TimerText;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +38,7 @@ public class CarInteractable : InteractableObject
         if(!isInside)
         {
             isInside = true;
-
+            StarterAssets.FirstPersonController.MecaCar = true;
             player.transform.parent = car.transform;
             player.SetActive(false);
             collider.enabled = false;
@@ -63,6 +68,7 @@ public class CarInteractable : InteractableObject
             
         }
 
+        /*
         //Si on sort de la voiture
         if(isInside && canLeave)
         {
@@ -102,10 +108,41 @@ public class CarInteractable : InteractableObject
         {
             canLeave = true;
         }
+        */
     }
 
-    public bool GetIsInside()
+    private void Update()
     {
-        return isInside;
+        float interactRange = 5f;
+        Collider [] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+        foreach (Collider collider in colliderArray) {
+
+            if (!StarterAssets.FirstPersonController.pause && !StarterAssets.FirstPersonController.dialogue && isInside)
+            {
+                if(collider.TryGetComponent(out DoorInteractable doorInteractable)) {
+                    StarterAssets.FirstPersonController.MecaGame = true;
+                    
+                }
+            }
+        }
+            
+        if(isInside && StarterAssets.FirstPersonController.MecaGameBegin && !StarterAssets.FirstPersonController.MecaGame)
+        {
+            timeRemaining -= Time.deltaTime;
+            Display(timeRemaining);
+            if (timeRemaining <= 0f)
+            {
+                StarterAssets.FirstPersonController.GameOver = true;
+            }
+        }
+
+    }
+
+    private void Display(float timeToDisplay)
+    {
+        float minutes = Mathf.FloorToInt(timeToDisplay/60);
+        float seconds = Mathf.FloorToInt(timeToDisplay%60);
+        if (timeToDisplay >= 0) {TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);}
+        else {TimerText.text = "00:00";}
     }
 }

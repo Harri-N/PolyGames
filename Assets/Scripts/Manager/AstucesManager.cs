@@ -80,7 +80,7 @@ public class AstucesManager : MonoBehaviour
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
-        if (FirstPersonController.MecaTalkEnd && FirstPersonController.etape == 4)
+        if (FirstPersonController.MecaCar && FirstPersonController.etape == 4)
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
