@@ -15,12 +15,14 @@ public class CarInteractable : InteractableObject
     private AudioSource[] carAudio;
     private float timeLeft;
     private bool canLeave = false;
+    private Collider collider;
 
     // Start is called before the first frame update
     void Start()
     {
         car = transform.parent.gameObject;
         player = GameObject.FindGameObjectWithTag("Player");
+        collider = gameObject.GetComponent<Collider>();
         timeLeft = 1f;
     }
 
@@ -34,7 +36,7 @@ public class CarInteractable : InteractableObject
 
             player.transform.parent = car.transform;
             player.SetActive(false);
-
+            collider.enabled = false;
             carCamera.SetActive(true);
 
             car.GetComponent<CarController>().enabled = true;
@@ -100,5 +102,10 @@ public class CarInteractable : InteractableObject
         {
             canLeave = true;
         }
+    }
+
+    public bool GetIsInside()
+    {
+        return isInside;
     }
 }

@@ -5,7 +5,7 @@ using StarterAssets;
 
 public class Ho11Load : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] private GameObject player;
     private FirstPersonController fpscontroller;
     private void Awake() {
         fpscontroller = GetComponent<FirstPersonController>();
@@ -16,7 +16,9 @@ public class Ho11Load : MonoBehaviour
 
     public void Reset()
     {
+        player.SetActive(false);
         player.transform.position = transform.Find("StartPoint").position;
         player.transform.rotation =  transform.Find("StartPoint").rotation;
+        player.SetActive(true);
     }
 }

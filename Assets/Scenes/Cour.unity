@@ -266,7 +266,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 416829157}
+      objectReference: {fileID: 1065032477}
     - target: {fileID: 8972500206765344523, guid: c5778897a14651c429d72ecf2bef085b,
         type: 3}
       propertyPath: mineGuy
@@ -1120,12 +1120,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a473a1211fe302445a99a3f7801dd293, type: 3}
---- !u!4 &416829157 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3239639589595977502, guid: a473a1211fe302445a99a3f7801dd293,
-    type: 3}
-  m_PrefabInstance: {fileID: 416829156}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &416829158 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1985634639100819633, guid: a473a1211fe302445a99a3f7801dd293,

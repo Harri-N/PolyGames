@@ -5,7 +5,7 @@ using StarterAssets;
 
 public class CouloirLoad : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] private GameObject player;
     private Vector3 targetPosition11;
     private Vector3 targetPosition12;
     private FirstPersonController fpscontroller;
@@ -35,8 +35,10 @@ public class CouloirLoad : MonoBehaviour
     
     public void Reset()
     {
+        player.SetActive(false);
         player.transform.position = transform.Find("StartPoint").position;
         player.transform.rotation =  transform.Find("StartPoint").rotation;
+        player.SetActive(true);
     }
 
 }

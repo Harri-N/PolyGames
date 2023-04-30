@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class CourLoad : MonoBehaviour
 {
     private FirstPersonController fpscontroller;
-    [SerializeField] private Transform player;
+    [SerializeField] private GameObject player;
     [SerializeField] private NPCInteractable mineGuy;
     [SerializeField] private DoorInteractable porteEntree;
     [SerializeField] private List<GameObject> canvas = new List<GameObject>();
@@ -49,8 +49,10 @@ public class CourLoad : MonoBehaviour
 
     public void Reset()
     {
+        player.SetActive(false);
         player.transform.position = transform.Find("StartPoint").position;
         player.transform.rotation =  transform.Find("StartPoint").rotation;
+        player.SetActive(true);
     }
 
 }

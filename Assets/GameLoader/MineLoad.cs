@@ -5,7 +5,7 @@ using StarterAssets;
 
 public class MineLoad : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] private GameObject player;
     private FirstPersonController fpscontroller;
 
     private void Awake() {
@@ -17,7 +17,9 @@ public class MineLoad : MonoBehaviour
 
     public void Reset()
     {
+        player.SetActive(false);
         player.transform.position = transform.Find("StartPoint").position;
         player.transform.rotation =  transform.Find("StartPoint").rotation;
+        player.SetActive(true);
     }
 }
