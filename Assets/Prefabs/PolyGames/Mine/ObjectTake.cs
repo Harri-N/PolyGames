@@ -12,4 +12,9 @@ public class ObjectTake : InteractableObject
         Destroy(gameObject, 0f);
             
     }
+
+    public override void Interact() 
+    {
+        Take();
+    }
 }

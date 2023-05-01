@@ -38,40 +38,19 @@ public class PlayerInteract : MonoBehaviour
 
             if (!FirstPersonController.pause && !FirstPersonController.dialogue)
             {
-                if(collider.TryGetComponent(out NPCInteractable npcInteractable)) {
-                    //transform.LookAt(npcInteractable.head.transform);
-                    foreach (GameObject canva in canvas)
-                    {
-                        canva.SetActive(false);
+                if(collider.TryGetComponent(out InteractableObject interactableObject))
+                {
+                    if(collider.TryGetComponent(out NPCInteractable npcInteractable)) {
+                        //transform.LookAt(npcInteractable.head.transform);
+                        foreach (GameObject canva in canvas)
+                        {
+                            canva.SetActive(false);
+                        }
+                        npcInteractable.Interact(transform);
                     }
-                    npcInteractable.Interact(transform);
+                    else {interactableObject.Interact();}
                 }
-
-                if(collider.TryGetComponent(out DoorInteractable doorInteractable)) {
-                    doorInteractable.ToggleDoor();
-                }
-
-                if(collider.TryGetComponent(out ObjectTake objectTake)) {
-                    /*
-                    Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-                    RaycastHit hit;
-                    if(Physics.Raycast(ray, out hit, 4))
-                    {
-
-                    }
-
-                    if(hit.collider.tag == "LittleRock")
-                    {
-                        hit.collider.GetComponent<ObjectTake>().Take();
-                    }
-                    */
-                    objectTake.Take();
-
-                }
-
-                if(collider.TryGetComponent(out CarInteractable car)) {
-                    car.EnterCar();
-                }
+                    
             }
 
             

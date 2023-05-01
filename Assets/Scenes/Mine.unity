@@ -1536,6 +1536,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4454757651910166102, guid: dfd3a8dda60e1f04d92a65ed865a8d45,
         type: 3}
+      propertyPath: m_LandSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454757651910166102, guid: dfd3a8dda60e1f04d92a65ed865a8d45,
+        type: 3}
       propertyPath: m_StepInterval
       value: 4
       objectReference: {fileID: 0}

@@ -8,7 +8,7 @@ public class DoorInteractable : InteractableObject
     [SerializeField] private string scene;
     
     
-    public void ToggleDoor()
+    public override void Interact() 
     {
         Debug.Log("Door");
         gameLoader.ChangeScene(scene);

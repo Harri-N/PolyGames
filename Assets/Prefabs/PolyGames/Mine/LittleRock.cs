@@ -15,7 +15,7 @@ public class LittleRock : ObjectTake
     {
         fpscontroller = GetComponent<FirstPersonController>();
     }
-    public override void Take()
+    public override void Take() 
     {
         base.Take();
         rocks += 1;

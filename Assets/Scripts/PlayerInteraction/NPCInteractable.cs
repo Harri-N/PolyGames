@@ -40,7 +40,8 @@ public class NPCInteractable : InteractableObject
     private void Update()
     {
         if ((!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2 && professeur == "mine") 
-        || (!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.MecaTalk && !FirstPersonController.MecaTalkEnd && professeur == "meca") ) {
+        || (!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.MecaTalk && !FirstPersonController.MecaTalkEnd && professeur == "meca")
+        || (!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.FortempsTalk && !FirstPersonController.FortempsTalkEnd && professeur == "fortemps") ) {
             foreach (GameObject canva in canvas)
             {
                 canva.SetActive(false);
@@ -57,7 +58,7 @@ public class NPCInteractable : InteractableObject
         template_clone.transform.GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>().text = Nom;
     }
 
-    public void Interact(Transform interactorTransform) 
+    public override void Interact(Transform interactorTransform) 
     {
         switch(professeur) {
             case "doyen":

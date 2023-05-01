@@ -124,6 +124,7 @@ public class NextDialogue : MonoBehaviour
                 if (FirstPersonController.MecaGame && !FirstPersonController.MathTalk) {gameLoader.ChangeScene("Ho12"); gameObject.SetActive(false);}
                 if (FirstPersonController.MathTalk && !FirstPersonController.MathTalkEnd) {FirstPersonController.MathTalkEnd = true; gameObject.SetActive(false);}
                 if (FirstPersonController.MathGame && !FirstPersonController.FortempsTalk) {gameLoader.ChangeScene("Couloir"); gameObject.SetActive(false);}
+                if (FirstPersonController.FortempsTalk && !FirstPersonController.FortempsTalkEnd) {FirstPersonController.FortempsTalkEnd = true; gameObject.SetActive(false);}
 
                 if(FirstPersonController.Tuto1 && !FirstPersonController.Tuto1End) {FirstPersonController.Tuto1End = true; gameObject.SetActive(false);}
                 if(FirstPersonController.Tuto2 && !FirstPersonController.Tuto2End) {FirstPersonController.Tuto2End = true; gameObject.SetActive(false);}
