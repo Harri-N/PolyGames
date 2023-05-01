@@ -5,11 +5,14 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
 
+    public GameObject dragon;
+
     public float health = 50f;
 
     public void TakeDamage(float amount)
     {
         health -= amount;
+        Debug.Log("Damage");
         if(health <= 0f)
         {
             Die();
@@ -18,7 +21,7 @@ public class Target : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        dragon.SetActive(false);
     }
   
 }

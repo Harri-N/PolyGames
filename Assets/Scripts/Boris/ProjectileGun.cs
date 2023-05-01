@@ -145,7 +145,7 @@ public class ProjectileGun : MonoBehaviour
             allowInvoke = false;
 
             //add recoilto player
-            playerRb.AddForce(-directionWithSpread.normalized * recoilForce, ForceMode.Impulse);
+            //playerRb.AddForce(-directionWithSpread.normalized * recoilForce, ForceMode.Impulse);
         }
 
         //if more than one bulletPerTap make sure to repeat shoot function
