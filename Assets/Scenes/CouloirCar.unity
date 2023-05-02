@@ -4616,10 +4616,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0244a2f57aba96348bd4268302732e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: "Parler \xE0 M. Reynolds"
+  interactText: "Parler \xE0 M. Newton"
   dialogues:
-  - VroumVroum
-  Nom: MecaGuy
+  - "Ah te voil\xE0 enfin ! Viens, il n\u2019y pas de temps \xE0 perdre. Comme tu
+    peux le constater, le dragon a d\xE9j\xE0 commenc\xE9 \xE0 attaquer et l'espace-temps
+    a \xE9t\xE9 d\xE9form\xE9. "
+  - "Si tu ne veux pas rester coinc\xE9 ici, je te conseille de prendre cette voiture.
+    Elle a \xE9t\xE9 con\xE7ue lors du Shell Eco-marathon par 5 jeunes ing\xE9nieurs
+    m\xE9canicien de la facult\xE9. Elle te permettra de parcourir plus rapidement
+    une longue distance avec le moins de carburant possible."
+  Nom: M. Newton
   player: {fileID: 1211667023}
   head: {fileID: 0}
   d_template: {fileID: 754369841}
@@ -5411,6 +5417,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Eco Shell Car Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686704694307567662, guid: 2350aacc96f3f9c43b34a5b6630fed60,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2350aacc96f3f9c43b34a5b6630fed60, type: 3}
@@ -6612,7 +6623,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 58ffd98d9f92d0e49aac803895c73c79, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -105,6 +105,9 @@ namespace StarterAssets
 
 		static public bool FortempsTalk = false;
 		static public bool FortempsTalkEnd = false;
+		static public bool DragonGameBegin = false;
+		static public bool DragonGameBegin2 = false;
+		static public bool DragonGame = false;
 		
 		// Tuto
 		static public bool Tuto1 = false;
@@ -143,6 +146,9 @@ namespace StarterAssets
 			MathGame = false;
 			FortempsTalk = false;
 			FortempsTalkEnd = false;
+			DragonGameBegin = false;
+			DragonGameBegin2 = false;
+			DragonGame = false;
 			
 			// Tuto
 			Tuto1 = false;

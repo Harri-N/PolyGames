@@ -62,6 +62,12 @@ public class NextDialogue : MonoBehaviour
                 if (index == 3) {boxTuto.transform.Find("BoxTuto/BoxIconsJump").gameObject.SetActive(true);}
                 if (index == 4) {boxTuto.transform.Find("BoxTuto/BoxIconsFire").gameObject.SetActive(true);}
             }
+            if(FirstPersonController.Tuto3 && !FirstPersonController.Tuto3End)
+            {
+                boxTuto = transform.GetChild(2).gameObject;
+                boxTuto.transform.Find("BoxTuto/BoxIconsFire").gameObject.SetActive(false);
+                if (index == 3) {boxTuto.transform.Find("BoxTuto/BoxIconsFire").gameObject.SetActive(true);}
+            }
 
             //Si un seul dialogue, on est à la fin
             if(transform.childCount <= 3) {
@@ -128,6 +134,7 @@ public class NextDialogue : MonoBehaviour
 
                 if(FirstPersonController.Tuto1 && !FirstPersonController.Tuto1End) {FirstPersonController.Tuto1End = true; gameObject.SetActive(false);}
                 if(FirstPersonController.Tuto2 && !FirstPersonController.Tuto2End) {FirstPersonController.Tuto2End = true; gameObject.SetActive(false);}
+                if(FirstPersonController.Tuto3 && !FirstPersonController.Tuto3End) {FirstPersonController.Tuto3End = true; gameObject.SetActive(false);}
             }
             
         }

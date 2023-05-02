@@ -30,13 +30,13 @@ public class AstucesManager : MonoBehaviour
             dia.Add("Bonjour ! Je me présente, je m’appelle Qapi et je fais partie de la cellule de pédagogie facultaire QAP-Polytech.");
             dia.Add("À la Polytech de Mons, nous avons mis en place un dispositif de réussite pour les nouveaux jeunes arrivants. C’est pourquoi je serai là pour t’accompagner et te conseiller tout au long de ton aventure.");
             dia.Add("N’hésite pas à me consulter en appuyant sur le bouton start ou la touche Tab. Tu trouveras dans la rubrique « astuces » un rappel de la mission en cours.");
-            dia.Add("Pour commencer, rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier, tu trouvera M. Goderniaux. Il te donnera la 1ère épreuve.");
+            dia.Add("Pour commencer, rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier, tu trouvera M. Pierre. Il te donnera la 1ère épreuve.");
             dia.Add("Pour te déplacer, utilise les touches ZQSD de ton clavier ou le joystick gauche de ta manette.");
             dia.Add("Pour orienter la caméra, utilise ta souris ou le joystick droit de ta manette. Tu peux modifier la sensibilité dans les paramètres du menu pause.");
             dia.Add("Pour interagir avec ton environnement, utilise la touche E de ton clavier ou le bouton X de ta manette.");
             NPCAstuces.SetDialogues(dia);
-            string text = "Rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier et va parler à M.Young.";
-            string obj = "Objectif : Aller parler à M.Young.";
+            string text = "Rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier et va parler à M.Pierre.";
+            string obj = "Objectif : Aller parler à M.Pierre.";
             float timewait = 1f;
             StartCoroutine(ChangeAstuces(timewait, text, obj));
         }
@@ -48,10 +48,10 @@ public class AstucesManager : MonoBehaviour
             List<string> dia = new List<string>();
             dia.Add("Nous voilà dans la grotte. Tu trouveras les matières premières au fond de celle-ci.");
             dia.Add("Pour sauter et éviter les obstacles, utilise la touche espace de ton clavier ou le bouton A de ta manette.");
-            dia.Add("Pour frapper avec la pioche, utilise le clic gauche de ta souris ou la touche RB de ta manette.");
+            dia.Add("Pour frapper avec la pioche, utilise le clic gauche de ta souris ou la touche RT de ta manette.");
             NPCAstuces.SetDialogues(dia);
-            string text = "Aller au fond de la grotte et casser des cailloux.";
-            string obj = "Objectif : Récolter des cailloux.";
+            string text = "Aller au fond de la grotte et récolter du calcaire.";
+            string obj = "Objectif : Récolter du calcaire.";
             float timewait = 0f;
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
@@ -60,7 +60,7 @@ public class AstucesManager : MonoBehaviour
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
-            dia.Add("Super ! Tu as pu récolter les cailloux. Allons les rapporter M. Young");
+            dia.Add("Super ! Tu as pu récolter le calcaire. Allons les rapporter M. Pierre");
             NPCAstuces.SetDialogues(dia);
             string text = "";
             string obj = "";
@@ -72,10 +72,10 @@ public class AstucesManager : MonoBehaviour
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
-            dia.Add("Maintenat que tu as réussi la 1ère épreuve, va rejoindre M. Reynolds. Il t’attend dans le hall. Tu peux rentrer dans le bâtiment par l’entrée principale.");
+            dia.Add("Maintenat que tu as réussi la 1ère épreuve, va rejoindre M. Newton. Il t’attend dans le hall. Tu peux rentrer dans le bâtiment par l’entrée principale.");
             NPCAstuces.SetDialogues(dia);
-            string text = "Va voir M. Reynolds à l'entrée du bâtiment principal.";
-            string obj = "Objectif : Aller parler à M. Reynolds.";
+            string text = "Va voir M. Newton à l'entrée du bâtiment principal.";
+            string obj = "Objectif : Aller parler à M. Newton.";
             float timewait = 1f;
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
@@ -84,7 +84,7 @@ public class AstucesManager : MonoBehaviour
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
-            dia.Add("Pour sortir de la faille spatio-temporelle, dirige-toi vers l'auditoire 12. Il se trouve au 1er étage et au fond du couloir de droite.");
+            dia.Add("Pour sortir de la faille spatio-temporelle, dirige-toi vers l'auditoire 12 avant le temps imparti. Il se trouve au 1er étage et au fond du couloir de droite. ");
             NPCAstuces.SetDialogues(dia);
             string text = "Aller à l'auditoire 12. Il se trouve au 1er étage et au fond du couloir de droite.";
             string obj = "Objectif : Aller à l'auditoire 12.";
@@ -108,12 +108,31 @@ public class AstucesManager : MonoBehaviour
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
-            dia.Add("GG Bro.");
+            dia.Add("Super ! Tu as réussi toutes les épreuves. Tu es maintenant prêt pour le combat final. Va retrouver M. Jobs qui dans la cour. Il a quelques mots à te dire avant que tu n’entames la dernière étape de ton parcours.");
             NPCAstuces.SetDialogues(dia);
-            string text = "";
-            string obj = "";
+            string text = "Aller dans la cour pour parler à .M Jobs.";
+            string obj = "Aller dans la cour.";
             float timewait = 0f;
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
+        }
+
+        if (FirstPersonController.DragonGameBegin2 && FirstPersonController.etape == 7)
+        {
+            FirstPersonController.etape += 1;
+            FirstPersonController.Tuto3 = true;
+            List<string> dia = new List<string>();
+            dia.Add("Pour vaincre le dragon, il te suffit de le toucher avec les lasers.");
+            dia.Add("Pour tirer, utilise le clic gauche de ta souris ou la touche RT de ta manette.");
+            NPCAstuces.SetDialogues(dia);
+            string text = "Vaincre le dragon.";
+            string obj = "Vaincre le dragon.";
+            float timewait = 0f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));    
+        }
+
+        if (FirstPersonController.DragonGame)
+        {
+            gameLoader.ChangeScene("Demarrage");
         }
 
     }

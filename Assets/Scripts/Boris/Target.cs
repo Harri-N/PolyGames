@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StarterAssets;
 
 public class Target : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Target : MonoBehaviour
     void Die()
     {
         dragon.SetActive(false);
+        FirstPersonController.DragonGame = true;
     }
   
 }
