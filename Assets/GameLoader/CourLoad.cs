@@ -140,7 +140,7 @@ public class CourLoad : MonoBehaviour
         AimingPoint.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         FirstPersonController.DragonGameBegin2 = true;
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(2f);
         animDragon.SetTrigger("Move");
         Fortemps.SetActive(false);
     }

@@ -3298,7 +3298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragon: {fileID: 5349598317080867641}
-  health: 400
+  health: 4000
 --- !u!1 &1720104472
 GameObject:
   m_ObjectHideFlags: 0
@@ -4506,20 +4506,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 2.3130653, z: 6.847156}
   m_Center: {x: 1.5, y: 4.429973, z: -4.9147334}
---- !u!114 &4581359280854251685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5349598317080867641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ea31227a094dd4abf9eac4fa1cc202, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dragon: {fileID: 0}
-  health: 400
 --- !u!95 &4581359280854251687
 Animator:
   serializedVersion: 5
@@ -4633,7 +4619,6 @@ GameObject:
   - component: {fileID: 4717036824253540739}
   - component: {fileID: 4581359280854251684}
   - component: {fileID: 4581359280854251687}
-  - component: {fileID: 4581359280854251685}
   m_Layer: 10
   m_Name: Doudou
   m_TagString: Untagged
