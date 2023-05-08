@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Back",
+                    "type": "Button",
+                    "id": "4e3841ed-978f-481e-b357-36c12872d380",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -375,6 +384,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Swing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "84f9419e-3659-4349-bdfb-0980a64c73e8",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "20e2bc46-3298-4929-bb0e-ada43a2c77ba",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Back",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -901,18 +932,9 @@
             "id": "dfc2589c-d27f-4665-bdad-23fadeb17594",
             "actions": [
                 {
-                    "name": "Back",
-                    "type": "Button",
-                    "id": "10c5e6f6-64d1-4e6b-9620-30fe9e9c90d5",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Pause",
                     "type": "Button",
-                    "id": "cd69977a-c4ab-4bcc-8c21-9fd49ca62786",
+                    "id": "a50a2895-e35f-493c-9362-434780f07d78",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -922,29 +944,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "1461c21f-0c3d-41fe-969a-338f54bd82dd",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Back",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2034fe51-b099-405b-b81f-90cd15e5c6f4",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Back",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a35772be-e6bc-47c5-81e8-0ee8dc07f329",
+                    "id": "615eb098-9bb3-462d-8f30-d75969ebc205",
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
@@ -955,7 +955,7 @@
                 },
                 {
                     "name": "",
-                    "id": "eb145c10-4bbc-4579-afae-bbda4ae9320b",
+                    "id": "39cf47f5-c56c-46bf-8656-00738555fb38",
                     "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
