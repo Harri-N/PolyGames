@@ -126,7 +126,7 @@ public class CarInteractable : InteractableObject
             }
         }
             
-        if(isInside && StarterAssets.FirstPersonController.MecaGameBegin && !StarterAssets.FirstPersonController.MecaGame)
+        if(isInside && StarterAssets.FirstPersonController.MecaGameBegin && !StarterAssets.FirstPersonController.MecaGame && !StarterAssets.FirstPersonController.pause && !StarterAssets.FirstPersonController.dialogue)
         {
             timeRemaining -= Time.deltaTime;
             Display(timeRemaining);

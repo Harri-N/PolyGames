@@ -127,7 +127,7 @@ public class NextDialogue : MonoBehaviour
                 if(FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2) {FirstPersonController.MineTalkEnd2 = true; gameObject.SetActive(false); }
                 if(FirstPersonController.MecaTalk && !FirstPersonController.MecaTalkEnd) {FirstPersonController.MecaTalkEnd = true; gameObject.SetActive(false);}
                 if(FirstPersonController.MecaCar && !FirstPersonController.MecaGameBegin) {FirstPersonController.MecaGameBegin = true; gameObject.SetActive(false);}
-                if (FirstPersonController.MecaGame && !FirstPersonController.MathTalk) {gameLoader.ChangeScene("Ho12"); gameObject.SetActive(false);}
+                if (FirstPersonController.MecaGame && !FirstPersonController.MathTalk && FirstPersonController.etape < 8) {gameLoader.ChangeScene("Ho12"); gameObject.SetActive(false);}
                 if (FirstPersonController.MathTalk && !FirstPersonController.MathTalkEnd) {FirstPersonController.MathTalkEnd = true; gameObject.SetActive(false);}
                 if (FirstPersonController.MathGame && !FirstPersonController.FortempsTalk) {gameLoader.ChangeScene("Couloir"); gameObject.SetActive(false);}
                 if (FirstPersonController.FortempsTalk && !FirstPersonController.FortempsTalkEnd) {FirstPersonController.FortempsTalkEnd = true; gameObject.SetActive(false);}

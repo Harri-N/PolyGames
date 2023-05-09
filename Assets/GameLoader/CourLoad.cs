@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CourLoad : MonoBehaviour
 {
@@ -14,11 +15,13 @@ public class CourLoad : MonoBehaviour
     [SerializeField] private GameObject dragon;
     [SerializeField] private GameObject gun;
     [SerializeField] private GameObject AimingPoint;
+    [SerializeField] private GameObject HealthBar;
     [SerializeField] private GameObject CameraObject;
     [SerializeField] private GameObject Camera2;
     [SerializeField] private DoorInteractable porteEntree;
     [SerializeField] private List<GameObject> canvas = new List<GameObject>();
     [SerializeField] private Transform CameraDragon;
+    [SerializeField] private GameObject Flammes;
     
     private NPCInteractable mineNPC;
     private Vector3 targetPosition;
@@ -34,6 +37,9 @@ public class CourLoad : MonoBehaviour
     public Light light;
     public AudioClip drama;
     public AudioSource audio;
+
+    private float timeRemaining = 60.0f;
+    [SerializeField] private TextMeshProUGUI TimerText;
 
     private void Awake() {
         
@@ -73,6 +79,7 @@ public class CourLoad : MonoBehaviour
             RenderSettings.skybox = skyMaterial;
             light.intensity = 0;
             audio.clip = drama;
+            Flammes.SetActive(true);
             audio.Play();
         }
 
@@ -96,6 +103,24 @@ public class CourLoad : MonoBehaviour
             targetDragonRotation = CameraDragon.transform.rotation;
             StartCoroutine(DragonBegin());
         }
+
+        if (FirstPersonController.Tuto3End && !FirstPersonController.pause && !FirstPersonController.dialogue && !FirstPersonController.DragonGame)
+        {
+            timeRemaining -= Time.deltaTime;
+            Display(timeRemaining);
+            if (timeRemaining <= 0f)
+            {
+                FirstPersonController.GameOver = true;
+            }
+        }
+    }
+
+    private void Display(float timeToDisplay)
+    {
+        float minutes = Mathf.FloorToInt(timeToDisplay/60);
+        float seconds = Mathf.FloorToInt(timeToDisplay%60);
+        if (timeToDisplay >= 0) {TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);}
+        else {TimerText.text = "00:00";}
     }
 
     public void Reset()
@@ -138,6 +163,7 @@ public class CourLoad : MonoBehaviour
         */
         gun.SetActive(true);
         AimingPoint.SetActive(true);
+        HealthBar.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         FirstPersonController.DragonGameBegin2 = true;
         yield return new WaitForSeconds(2f);

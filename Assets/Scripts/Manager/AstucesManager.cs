@@ -13,10 +13,13 @@ public class AstucesManager : MonoBehaviour
     private FirstPersonController fpscontroller;
     [SerializeField] private GameLoader gameLoader;
 
+    private bool AstuceDialogue;
+
 
     private void Awake() 
     {
         fpscontroller = GetComponent<FirstPersonController>();
+        AstuceDialogue = true;
     }
 
     void Update()
@@ -80,7 +83,17 @@ public class AstucesManager : MonoBehaviour
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
-        if (FirstPersonController.MecaCar && FirstPersonController.etape == 4)
+        if (FirstPersonController.MecaTalkEnd && FirstPersonController.etape == 4)
+        {
+            FirstPersonController.etape += 1;
+            AstuceDialogue = false;
+            string text = "Rentrer dans la voiture.";
+            string obj = "Objectif : Rentrer dans la voiture.";
+            float timewait = 0f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));    
+        }
+
+        if (FirstPersonController.MecaCar && FirstPersonController.etape == 5)
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
@@ -92,7 +105,7 @@ public class AstucesManager : MonoBehaviour
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
-        if (FirstPersonController.MecaGame && FirstPersonController.etape == 5)
+        if (FirstPersonController.MecaGame && FirstPersonController.etape == 6)
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
@@ -104,7 +117,19 @@ public class AstucesManager : MonoBehaviour
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
-        if (FirstPersonController.MathGame && FirstPersonController.etape == 6)
+        if (FirstPersonController.Ho12 && FirstPersonController.etape == 7)
+        {
+            FirstPersonController.etape += 1;
+            List<string> dia = new List<string>();
+            dia.Add("Va voir M.Pyth. Il t'attend au fond de l'auditoire devant le tableau.");
+            NPCAstuces.SetDialogues(dia);
+            string text = "Aller parler à M. Pyth";
+            string obj = "Aller parler à M. Pyth";
+            float timewait = 0f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));    
+        }
+
+        if (FirstPersonController.MathGame && FirstPersonController.etape == 8)
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
@@ -116,7 +141,19 @@ public class AstucesManager : MonoBehaviour
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
-        if (FirstPersonController.DragonGameBegin2 && FirstPersonController.etape == 7)
+        if (FirstPersonController.Couloir && FirstPersonController.etape == 9)
+        {
+            FirstPersonController.etape += 1;
+            AstuceDialogue = false;
+            string text = "Aller dans la cour pour parler à .M Jobs.";
+            string obj = "Aller dans la cour.";
+            float timewait = 0f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));    
+        }
+
+
+
+        if (FirstPersonController.DragonGameBegin2 && FirstPersonController.etape == 10)
         {
             FirstPersonController.etape += 1;
             FirstPersonController.Tuto3 = true;
@@ -139,13 +176,16 @@ public class AstucesManager : MonoBehaviour
 
     IEnumerator ChangeAstuces(float t, string text, string obj) {
         yield return new WaitForSeconds(t);
-        foreach (GameObject canva in canvas)
-        {
-            canva.SetActive(false);
+        if (AstuceDialogue) {
+            foreach (GameObject canva in canvas)
+            {
+                canva.SetActive(false);
+            }
+            NPCAstuces.Interact(NPCAstuces.GetLookAt().transform);
         }
-        NPCAstuces.Interact(NPCAstuces.GetLookAt().transform);
         Astuces.text = text;
         Objectif.text = obj;
+        AstuceDialogue = true;
     }
 
 }

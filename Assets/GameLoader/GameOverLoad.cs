@@ -10,20 +10,25 @@ public class GameOverLoad : MonoBehaviour
 
     private void Awake() 
     {
-        if (FirstPersonController.etape < 6) {
+        if (FirstPersonController.etape < 7) {
             nom_scene = "CouloirCar";
 			FirstPersonController.MecaTalkEnd = false;
 			FirstPersonController.MecaCar = false;
 			FirstPersonController.MecaGame = false;
             FirstPersonController.GameOver = false;
+            FirstPersonController.etape = 4;
         }
         else {
             nom_scene = "Cour";
 			FirstPersonController.FortempsTalkEnd = false;
 			FirstPersonController.DragonGameBegin = false;
 			FirstPersonController.DragonGameBegin2 = false;
+            FirstPersonController.Tuto3 = false;
+            FirstPersonController.Tuto3End = false;
 			FirstPersonController.DragonGame = false;
             FirstPersonController.GameOver = false;
+            FirstPersonController.Couloir = true;
+            FirstPersonController.etape = 10;
         }
     }
 
