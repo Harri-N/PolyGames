@@ -121,31 +121,25 @@ public class NextDialogue : MonoBehaviour
                 }
 
                 //Gestion des étapes dans le jeu
-                if(FirstPersonController.Doyen && !FirstPersonController.DoyenEnd) {FirstPersonController.DoyenEnd = true; gameObject.SetActive(false);}
-                if(FirstPersonController.MineTalk && !FirstPersonController.MineTalkEnd) {gameLoader.ChangeScene("Mine"); gameObject.SetActive(false);}
-                if (FirstPersonController.MineGame && !FirstPersonController.MineTalk2) {gameLoader.ChangeScene("Cour"); gameObject.SetActive(false);}
-                if(FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2) {FirstPersonController.MineTalkEnd2 = true; gameObject.SetActive(false); }
-                if(FirstPersonController.MecaTalk && !FirstPersonController.MecaTalkEnd) {FirstPersonController.MecaTalkEnd = true; gameObject.SetActive(false);}
-                if(FirstPersonController.MecaCar && !FirstPersonController.MecaGameBegin) {FirstPersonController.MecaGameBegin = true; gameObject.SetActive(false);}
-                if (FirstPersonController.MecaGame && !FirstPersonController.MathTalk && FirstPersonController.etape < 8) {gameLoader.ChangeScene("Ho12"); gameObject.SetActive(false);}
-                if (FirstPersonController.MathTalk && !FirstPersonController.MathTalkEnd) {FirstPersonController.MathTalkEnd = true; gameObject.SetActive(false);}
-                if (FirstPersonController.MathGame && !FirstPersonController.FortempsTalk) {gameLoader.ChangeScene("Couloir"); gameObject.SetActive(false);}
-                if (FirstPersonController.FortempsTalk && !FirstPersonController.FortempsTalkEnd) {FirstPersonController.FortempsTalkEnd = true; gameObject.SetActive(false);}
+                if(FirstPersonController.Doyen && !FirstPersonController.DoyenEnd) {FirstPersonController.DoyenEnd = true; }
+                if(FirstPersonController.MineTalk && !FirstPersonController.MineTalkEnd) {gameLoader.ChangeScene("Mine"); }
+                if (FirstPersonController.MineGame && !FirstPersonController.MineTalk2) {gameLoader.ChangeScene("Cour"); }
+                if(FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2) {FirstPersonController.MineTalkEnd2 = true;}
+                if(FirstPersonController.MecaTalk && !FirstPersonController.MecaTalkEnd) {FirstPersonController.MecaTalkEnd = true; }
+                if(FirstPersonController.MecaCar && !FirstPersonController.MecaGameBegin) {FirstPersonController.MecaGameBegin = true; }
+                if (FirstPersonController.MecaGame && !FirstPersonController.MathTalk && FirstPersonController.etape < 8) {gameLoader.ChangeScene("Ho12"); }
+                if (FirstPersonController.MathTalk && !FirstPersonController.MathTalkEnd) {FirstPersonController.MathTalkEnd = true;}
+                if (FirstPersonController.MathGame && !FirstPersonController.FortempsTalk) {gameLoader.ChangeScene("Couloir"); }
+                if (FirstPersonController.FortempsTalk && !FirstPersonController.FortempsTalkEnd) {FirstPersonController.FortempsTalkEnd = true;}
 
-                if(FirstPersonController.Tuto1 && !FirstPersonController.Tuto1End) {FirstPersonController.Tuto1End = true; gameObject.SetActive(false);}
-                if(FirstPersonController.Tuto2 && !FirstPersonController.Tuto2End) {FirstPersonController.Tuto2End = true; gameObject.SetActive(false);}
-                if(FirstPersonController.Tuto3 && !FirstPersonController.Tuto3End) {FirstPersonController.Tuto3End = true; gameObject.SetActive(false);}
+                if(FirstPersonController.Tuto1 && !FirstPersonController.Tuto1End) {FirstPersonController.Tuto1End = true;}
+                if(FirstPersonController.Tuto2 && !FirstPersonController.Tuto2End) {FirstPersonController.Tuto2End = true;}
+                if(FirstPersonController.Tuto3 && !FirstPersonController.Tuto3End) {FirstPersonController.Tuto3End = true;}
+
+                //On rend inactif le canva
+                gameObject.SetActive(false);
             }
             
         }
-    }
-
-    IEnumerator Transition() {
-        transition.SetTrigger("FadeOut");
-        yield return new WaitForSeconds(1f);
-        FirstPersonController.MecaTalkEnd = true;
-        DestroyImmediate(transform.GetChild(2).gameObject);
-        transition.ResetTrigger("FadeOut");
-        gameObject.SetActive(false);
     }
 }
