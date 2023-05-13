@@ -54,7 +54,7 @@ public class NextDialogue : MonoBehaviour
                 if (index == 7) {boxTuto.transform.Find("BoxTuto/BoxIconsLook").gameObject.SetActive(true);}
                 if (index == 8) {boxTuto.transform.Find("BoxTuto/BoxIconsInteract").gameObject.SetActive(true);}
             }
-            if(FirstPersonController.Tuto2 && !FirstPersonController.Tuto2End)
+            if(FirstPersonController.TutoMine && !FirstPersonController.TutoMineEnd)
             {
                 boxTuto = transform.GetChild(2).gameObject;
                 boxTuto.transform.Find("BoxTuto/BoxIconsJump").gameObject.SetActive(false);
@@ -62,7 +62,17 @@ public class NextDialogue : MonoBehaviour
                 if (index == 3) {boxTuto.transform.Find("BoxTuto/BoxIconsJump").gameObject.SetActive(true);}
                 if (index == 4) {boxTuto.transform.Find("BoxTuto/BoxIconsFire").gameObject.SetActive(true);}
             }
-            if(FirstPersonController.Tuto3 && !FirstPersonController.Tuto3End)
+
+            if(FirstPersonController.TutoCar && !FirstPersonController.TutoCarEnd)
+            {
+                boxTuto = transform.GetChild(2).gameObject;
+                boxTuto.transform.Find("BoxTuto/BoxIconsMove").gameObject.SetActive(false);
+                boxTuto.transform.Find("BoxTuto/BoxIconsStart").gameObject.SetActive(false);
+                if (index == 3) {boxTuto.transform.Find("BoxTuto/BoxIconsMove").gameObject.SetActive(true);}
+                if (index == 4) {boxTuto.transform.Find("BoxTuto/BoxIconsStart").gameObject.SetActive(true);}
+            }
+
+            if(FirstPersonController.TutoDragon && !FirstPersonController.TutoDragonEnd)
             {
                 boxTuto = transform.GetChild(2).gameObject;
                 boxTuto.transform.Find("BoxTuto/BoxIconsFire").gameObject.SetActive(false);
@@ -133,8 +143,9 @@ public class NextDialogue : MonoBehaviour
                 if (FirstPersonController.FortempsTalk && !FirstPersonController.FortempsTalkEnd) {FirstPersonController.FortempsTalkEnd = true;}
 
                 if(FirstPersonController.Tuto1 && !FirstPersonController.Tuto1End) {FirstPersonController.Tuto1End = true;}
-                if(FirstPersonController.Tuto2 && !FirstPersonController.Tuto2End) {FirstPersonController.Tuto2End = true;}
-                if(FirstPersonController.Tuto3 && !FirstPersonController.Tuto3End) {FirstPersonController.Tuto3End = true;}
+                if(FirstPersonController.TutoMine && !FirstPersonController.TutoMineEnd) {FirstPersonController.TutoMineEnd = true;}
+                if(FirstPersonController.TutoCar && !FirstPersonController.TutoCarEnd) {FirstPersonController.TutoCarEnd = true;}
+                if(FirstPersonController.TutoDragon && !FirstPersonController.TutoDragonEnd) {FirstPersonController.TutoDragonEnd = true;}
 
                 //On rend inactif le canva
                 gameObject.SetActive(false);

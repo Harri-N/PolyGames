@@ -5,6 +5,7 @@ using UnityStandardAssets.Vehicles.Car;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEditor;
 using TMPro;
+using StarterAssets;
 
 public class CarInteractable : InteractableObject
 {
@@ -43,9 +44,6 @@ public class CarInteractable : InteractableObject
             player.SetActive(false);
             collider.enabled = false;
             carCamera.SetActive(true);
-
-            car.GetComponent<CarController>().enabled = true;
-            car.GetComponent<CarUserControl>().enabled = true;
 
             //car.GetComponent<MyCarController>().enabled = true;  Autre script pour controller la voiture (moins soffistiqu�)
             //car.GetComponent<PlayerController>().enabled = true;
@@ -128,6 +126,8 @@ public class CarInteractable : InteractableObject
             
         if(isInside && StarterAssets.FirstPersonController.MecaGameBegin && !StarterAssets.FirstPersonController.MecaGame && !StarterAssets.FirstPersonController.pause && !StarterAssets.FirstPersonController.dialogue)
         {
+            car.GetComponent<CarController>().enabled = true;
+            car.GetComponent<CarUserControl>().enabled = true;
             timeRemaining -= Time.deltaTime;
             Display(timeRemaining);
             if (timeRemaining <= 0f)

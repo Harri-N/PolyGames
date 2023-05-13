@@ -47,7 +47,7 @@ public class AstucesManager : MonoBehaviour
         if (FirstPersonController.MineTalkEnd && FirstPersonController.etape == 1)
         {
             FirstPersonController.etape += 1;
-            FirstPersonController.Tuto2 = true;
+            FirstPersonController.TutoMine = true;
             List<string> dia = new List<string>();
             dia.Add("Nous voilà dans la grotte. Tu trouveras les matières premières au fond de celle-ci.");
             dia.Add("Pour sauter et éviter les obstacles, utilise la touche espace de ton clavier ou le bouton A de ta manette.");
@@ -96,8 +96,11 @@ public class AstucesManager : MonoBehaviour
         if (FirstPersonController.MecaCar && FirstPersonController.etape == 5)
         {
             FirstPersonController.etape += 1;
+            FirstPersonController.TutoCar = true;
             List<string> dia = new List<string>();
             dia.Add("Pour sortir de la faille spatio-temporelle, dirige-toi vers l'auditoire 12 avant le temps imparti. Il se trouve au 1er étage et au fond du couloir de droite. ");
+            dia.Add("Pour te déplacer avec la voiture, utilise les touches ZQSD de ton clavier ou le joystick gauche de ta manette.");
+            dia.Add("Si tu te retrouves coincé, tu peux aller dans le menu pause et appuyer sur Réapparaitre");
             NPCAstuces.SetDialogues(dia);
             string text = "Aller à l'auditoire 12. Il se trouve au 1er étage et au fond du couloir de droite.";
             string obj = "Objectif : Aller à l'auditoire 12.";
@@ -156,7 +159,7 @@ public class AstucesManager : MonoBehaviour
         if (FirstPersonController.DragonGameBegin2 && FirstPersonController.etape == 10)
         {
             FirstPersonController.etape += 1;
-            FirstPersonController.Tuto3 = true;
+            FirstPersonController.TutoDragon = true;
             List<string> dia = new List<string>();
             dia.Add("Pour vaincre le dragon, il te suffit de le toucher avec les lasers.");
             dia.Add("Pour tirer, utilise le clic gauche de ta souris ou la touche RT de ta manette.");
@@ -169,7 +172,7 @@ public class AstucesManager : MonoBehaviour
 
         if (FirstPersonController.DragonGame)
         {
-            gameLoader.ChangeScene("Demarrage");
+            gameLoader.ChangeScene("Credits");
         }
 
     }

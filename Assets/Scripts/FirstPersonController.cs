@@ -112,14 +112,12 @@ namespace StarterAssets
 		// Tuto
 		static public bool Tuto1 = false;
 		static public bool Tuto1End = false;
-		static public bool Tuto2 = false;
-		static public bool Tuto2End = false;
-		static public bool Tuto3 = false;
-		static public bool Tuto3End = false;
-		static public bool Tuto4 = false;
-		static public bool Tuto4End = false;
-		static public bool Tuto5 = false;
-		static public bool Tuto5End = false;
+		static public bool TutoMine = false;
+		static public bool TutoMineEnd = false;
+		static public bool TutoDragon = false;
+		static public bool TutoDragonEnd = false;
+		static public bool TutoCar = false;
+		static public bool TutoCarEnd = false;
 
 		//LoadScene
 		static public bool Couloir = false;
@@ -153,14 +151,12 @@ namespace StarterAssets
 			// Tuto
 			Tuto1 = false;
 			Tuto1End = false;
-			Tuto2 = false;
-			Tuto2End = false;
-			Tuto3 = false;
-			Tuto3End = false;
-			Tuto4 = false;
-			Tuto4End = false;
-			Tuto5 = false;
-			Tuto5End = false;
+			TutoMine = false;
+			TutoMineEnd = false;
+			TutoCar = false;
+			TutoCarEnd = false;
+			TutoDragon = false;
+			TutoDragonEnd = false;
 
 			//LoadScene
 			Couloir = false;

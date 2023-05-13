@@ -22,6 +22,9 @@ public class CourLoad : MonoBehaviour
     [SerializeField] private List<GameObject> canvas = new List<GameObject>();
     [SerializeField] private Transform CameraDragon;
     [SerializeField] private GameObject Flammes;
+    [SerializeField] private AudioSource Dragonaudio;
+    [SerializeField] private GameObject InGameCanva;
+    [SerializeField] private GameObject DragonFlammes;
     
     private NPCInteractable mineNPC;
     private Vector3 targetPosition;
@@ -37,8 +40,11 @@ public class CourLoad : MonoBehaviour
     public Light light;
     public AudioClip drama;
     public AudioSource audio;
+    public Animator transition;
 
     private float timeRemaining = 60.0f;
+    private float timer = 0f;
+
     [SerializeField] private TextMeshProUGUI TimerText;
 
     private void Awake() {
@@ -104,7 +110,7 @@ public class CourLoad : MonoBehaviour
             StartCoroutine(DragonBegin());
         }
 
-        if (FirstPersonController.Tuto3End && !FirstPersonController.pause && !FirstPersonController.dialogue && !FirstPersonController.DragonGame)
+        if (FirstPersonController.TutoDragonEnd && !FirstPersonController.pause && !FirstPersonController.dialogue && !FirstPersonController.DragonGame)
         {
             timeRemaining -= Time.deltaTime;
             Display(timeRemaining);
@@ -112,6 +118,7 @@ public class CourLoad : MonoBehaviour
             {
                 FirstPersonController.GameOver = true;
             }
+            timer += Time.deltaTime;
         }
     }
 
@@ -136,39 +143,40 @@ public class CourLoad : MonoBehaviour
         float speed = 1f;
         FirstPersonController.DragonGameBegin = true;
         FirstPersonController.dialogue = true;
-        /*
-        Camera2.transform.position = startCamPosition;
-        Camera2.transform.rotation = startCamRotation;
+        
         player.SetActive(false);
+        transition.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(1f);
+        Fortemps.SetActive(false);
         Camera2.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-        /*while(Camera2.transform.position != targetDragonPosition || Camera2.transform.rotation != targetDragonRotation)
-        {
-            
-        }
-        Camera2.transform.position = Vector3.Lerp(Camera2.transform.position, targetDragonPosition, Time.deltaTime * speed);
-        Camera2.transform.rotation = Quaternion.Lerp(Camera2.transform.rotation, targetDragonRotation, Time.deltaTime * speed);    
+        InGameCanva.SetActive(false);
+        DragonFlammes.SetActive(false);
+        transition.ResetTrigger("FadeOut");
+        animDragon.SetTrigger("Graou");
+        yield return new WaitForSeconds(0.1f);
+
+
+        animDragon.ResetTrigger("Graou");
+        yield return new WaitForSeconds(0.1f);
+        DragonFlammes.SetActive(true);
+        Dragonaudio.Play(0);
         
         yield return new WaitForSeconds(4f);
-        gun.SetActive(true);
-        /*while(Camera2.transform.position != startCamPosition || Camera2.transform.rotation != startCamRotation)
-        {
-            
-        }
-        Camera2.transform.position = Vector3.Lerp(Camera2.transform.position, startCamPosition, Time.deltaTime * speed);
-        Camera2.transform.rotation = Quaternion.Lerp(Camera2.transform.rotation, startCamRotation, Time.deltaTime * speed);    
-        yield return new WaitForSeconds(2f);
-        player.SetActive(true);
+        
+
+        transition.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(1f);
         Camera2.SetActive(false);
-        */
+        player.SetActive(true);
+        InGameCanva.SetActive(true);
+        transition.ResetTrigger("FadeOut");
         gun.SetActive(true);
         AimingPoint.SetActive(true);
         HealthBar.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         FirstPersonController.DragonGameBegin2 = true;
-        yield return new WaitForSeconds(2f);
         animDragon.SetTrigger("Move");
-        Fortemps.SetActive(false);
+        
     }
 
 }

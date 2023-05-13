@@ -19,7 +19,7 @@ public class LittleRock : ObjectTake
     {
         base.Take();
         rocks += 1;
-        if (rocks == 2)
+        if (rocks == 3)
         {
             FirstPersonController.MineGame = true;
         }    

@@ -23,8 +23,8 @@ public class GameOverLoad : MonoBehaviour
 			FirstPersonController.FortempsTalkEnd = false;
 			FirstPersonController.DragonGameBegin = false;
 			FirstPersonController.DragonGameBegin2 = false;
-            FirstPersonController.Tuto3 = false;
-            FirstPersonController.Tuto3End = false;
+            FirstPersonController.TutoDragon = false;
+            FirstPersonController.TutoDragonEnd = false;
 			FirstPersonController.DragonGame = false;
             FirstPersonController.GameOver = false;
             FirstPersonController.Couloir = true;

@@ -6,26 +6,23 @@ public class Resource : MonoBehaviour
 {
 
     public GameObject resourcePrefab;
+    public GameObject animationFx;
     public Transform PrefabSpawn;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public AudioSource audio;
 
     public void Tapped()
     {
+        StartCoroutine(Tap());   
+    }
+
+    IEnumerator Tap()
+    {   
+        yield return new WaitForSeconds(0.25f);
+        animationFx.SetActive(true);
         resourcePrefab.SetActive(true);
+        audio.Play(0);
         //Instantiate(resourcePrefab, PrefabSpawn.position, PrefabSpawn.rotation);
-        Destroy(gameObject, 0.5f);
-        
+        Destroy(gameObject, 0.1f);
     }
 
 }

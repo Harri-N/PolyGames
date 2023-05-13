@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 using StarterAssets;
 
 public class ProjectileGun : MonoBehaviour
