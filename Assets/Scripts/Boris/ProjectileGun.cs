@@ -70,7 +70,8 @@ public class ProjectileGun : MonoBehaviour
         fire.Disable();
     }
 
-
+    
+    //Bout de code rendant l'arme très réaliste (recharger, etc)
 /*
     private void Update()
     {

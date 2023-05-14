@@ -8,30 +8,37 @@ using TMPro;
 
 public class CarInteractable : InteractableObject
 {
+    //Les objets à attacher au script
     public GameObject player;
     public GameObject car;
     public GameObject carCamera;
 
     private bool isInside;
-    private AudioSource[] carAudio;
-    private float timeLeft;
+    private AudioSource[] carAudio; //Les audios de la voiture 
+
+    //Utilisés pour sortir de la voiture mais dans cette version du script, sortir de la voiture a été désactivé
+    private float timeLeft; //permet de gérer un bug quand on veut rentrer et sortir trop vite
     private bool canLeave = false;
+
     private Collider collider;
 
     private float timeRemaining = 60.0f;
     private float timer = 0.0f;
+
     [SerializeField] private TextMeshProUGUI TimerText;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Assigne les objets aux bonnes variables au départ du script
+
         car = transform.parent.gameObject;
         player = GameObject.FindGameObjectWithTag("Player");
         collider = gameObject.GetComponent<Collider>();
         timeLeft = 1f;
     }
 
-    // Update is called once per frame
+   
     public override void Interact() 
     {
         //Si on entre dans la voitue
@@ -40,25 +47,22 @@ public class CarInteractable : InteractableObject
             isInside = true;
             StarterAssets.FirstPersonController.MecaCar = true;
             player.transform.parent = car.transform;
+
+            //On désactive le player
             player.SetActive(false);
             collider.enabled = false;
+
+            //On active la caméra de la voiture
             carCamera.SetActive(true);
 
+            //On active les commandes de la voiture et les sources audio
             car.GetComponent<CarController>().enabled = true;
             car.GetComponent<CarUserControl>().enabled = true;
-
-            //car.GetComponent<MyCarController>().enabled = true;  Autre script pour controller la voiture (moins soffistiqu�)
-            //car.GetComponent<PlayerController>().enabled = true;
-
             car.GetComponent<CarAudio>().enabled = true;
 
             timeLeft = 1f;
 
-
-
-
-
-            //On r�cup�re et on active toutes les audios sources
+            //On récupère et on active toutes les audios sources
             carAudio = car.GetComponents<AudioSource>();
 
             foreach(AudioSource single in carAudio)
@@ -113,6 +117,8 @@ public class CarInteractable : InteractableObject
 
     private void Update()
     {
+        //Permet de savoir si on est arriver à l'auditoire 12 et donc de terminer le jeu
+
         float interactRange = 5f;
         Collider [] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
         foreach (Collider collider in colliderArray) {
@@ -138,6 +144,7 @@ public class CarInteractable : InteractableObject
 
     }
 
+    //Pour afficher le temps depuis que la course à commencer
     private void Display(float timeToDisplay)
     {
         float minutes = Mathf.FloorToInt(timeToDisplay/60);
