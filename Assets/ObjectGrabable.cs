@@ -55,5 +55,11 @@ public class ObjectGrabable : MonoBehaviour
         }
 
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(gameObject.name);
+        Debug.Log(collision.gameObject.name);
+        
+    }
 }
 
