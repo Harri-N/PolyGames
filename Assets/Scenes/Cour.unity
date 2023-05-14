@@ -923,6 +923,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DeactivateMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 3729520890684254709, guid: 8ad352f420e53d24e9055fff2a02c2b3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4345459422945953279, guid: 8ad352f420e53d24e9055fff2a02c2b3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2855,7 +2860,7 @@ PrefabInstance:
     - target: {fileID: 1673993065946602476, guid: 56ca9029647f1ae4ab9af5a12b8ca4d8,
         type: 3}
       propertyPath: timeBetweenShots
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1673993066317160160, guid: 56ca9029647f1ae4ab9af5a12b8ca4d8,
         type: 3}

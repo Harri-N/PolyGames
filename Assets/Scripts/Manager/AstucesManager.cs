@@ -199,7 +199,7 @@ public class AstucesManager : MonoBehaviour
             FirstPersonController.etape += 1;
             AstuceDialogue = false;
             string text = "Aller dans la cour pour parler à .M Jobs.";
-            string obj = "Aller dans la cour.";
+            string obj = "Objectif : Aller dans la cour.";
             float timewait = 0f;
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }

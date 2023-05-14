@@ -10,6 +10,7 @@ public class Ho12Load : MonoBehaviour
     private void Awake() {
         fpscontroller = GetComponent<FirstPersonController>();
         FirstPersonController.Ho12 = true;
+        FirstPersonController.Couloir = false;
         transform.Find("StartPoint").position = player.transform.position;
         transform.Find("StartPoint").rotation = player.transform.rotation;
     }

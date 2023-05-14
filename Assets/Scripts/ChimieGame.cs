@@ -22,7 +22,7 @@ public class ChimieGame : MonoBehaviour
 
     private void Update() 
     {
-        if (FirstPersonController.ChimieTalkEnd && !begin)
+        if (FirstPersonController.ChimieTalkEnd && !begin && !FirstPersonController.ChimieTalk2)
         {
             StartCoroutine(GameBegin());
         }

@@ -6,6 +6,8 @@ using StarterAssets;
 public class CouloirLoad : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private AudioClip dramaSound;
+    [SerializeField] private AudioSource audio;
     private Vector3 targetPosition11;
     private Vector3 targetPosition12;
     private FirstPersonController fpscontroller;
@@ -16,10 +18,14 @@ public class CouloirLoad : MonoBehaviour
         targetPosition11 = transform.GetChild(0).position;
         targetPosition12 = transform.GetChild(1).position;
 
+        if (FirstPersonController.ChimieGame)
+        {
+            audio.clip = dramaSound;
+        }
         if (FirstPersonController.Ho11)
         {
             player.transform.position = targetPosition11;
-            player.transform.rotation = Quaternion.Euler(0f, 180f, 0f); 
+            player.transform.rotation = Quaternion.Euler(0f, 90f, 0f); 
             FirstPersonController.Ho11 = false;
         }
 
