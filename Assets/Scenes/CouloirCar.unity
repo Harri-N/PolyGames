@@ -5295,9 +5295,10 @@ MonoBehaviour:
   dialogues:
   - "Bienvenue dans le domaine des m\xE9caniciens. L\u2019ing\xE9nieur civil m\xE9canicien
     est un concepteur, un producteur et un gestionnaire de machines, d\u2019\xE9quipements
-    et de syst\xE8mes. 5 jeunes ing\xE9nieurs m\xE9canicien de la facult\xE9 ont
-    con\xE7u lors du Shell Eco-marathon cette voiture. Elle te permettra de parcourir
-    plus rapidement une longue distance avec le moins de carburant possible."
+    et de syst\xE8mes. "
+  - "5 jeunes ing\xE9nieurs m\xE9canicien de la facult\xE9 ont con\xE7u lors du Shell
+    Eco-marathon cette voiture. Elle te permettra de parcourir plus rapidement une
+    longue distance avec le moins de carburant possible."
   - "Si tu ne veux pas rester coinc\xE9 ici, je te conseille de la prendre. Il n\u2019y
     pas de temps \xE0 perdre. Comme tu peux le constater, le dragon a d\xE9j\xE0
     commenc\xE9 \xE0 attaquer et l'espace-temps a \xE9t\xE9 d\xE9form\xE9."
