@@ -103,6 +103,13 @@ namespace StarterAssets
 		static public bool MathTalkEnd = false;
 		static public bool MathGame = false;
 
+		static public bool ChimieTalk = false;
+		static public bool ChimieTalkEnd = false;
+		static public bool ChimieTalk2 = false;
+		static public bool ChimieTalk2End = false;
+		static public bool ChimieGame = false;
+		static public bool Release = false;
+
 		static public bool FortempsTalk = false;
 		static public bool FortempsTalkEnd = false;
 		static public bool DragonGameBegin = false;
@@ -118,6 +125,9 @@ namespace StarterAssets
 		static public bool TutoDragonEnd = false;
 		static public bool TutoCar = false;
 		static public bool TutoCarEnd = false;
+		static public bool Tuto11 = false;
+		static public bool Tuto11End = false;
+
 
 		//LoadScene
 		static public bool Couloir = false;
@@ -142,6 +152,10 @@ namespace StarterAssets
 			MathTalk = false;
 			MathTalkEnd = false;
 			MathGame = false;
+			ChimieTalk = false;
+			ChimieTalkEnd = false;
+			ChimieGame = false;
+			Release = false;
 			FortempsTalk = false;
 			FortempsTalkEnd = false;
 			DragonGameBegin = false;
@@ -157,6 +171,8 @@ namespace StarterAssets
 			TutoCarEnd = false;
 			TutoDragon = false;
 			TutoDragonEnd = false;
+			Tuto11 = false;
+			Tuto11End = false;
 
 			//LoadScene
 			Couloir = false;

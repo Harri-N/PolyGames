@@ -77,7 +77,7 @@ public class AstucesManager : MonoBehaviour
             List<string> dia = new List<string>();
             dia.Add("Maintenant que tu as réussi la 1ère épreuve, va rejoindre M. Newton. Il t’attend dans le hall. Tu peux rentrer dans le bâtiment par l’entrée principale.");
             NPCAstuces.SetDialogues(dia);
-            string text = "Va voir M. Newton à l'entrée du bâtiment principal.";
+            string text = "Va voir M. Newton qui t’attend dans le hall. Tu peux rentrer dans le bâtiment par l’entrée principale.";
             string obj = "Objectif : Aller parler à M. Newton.";
             float timewait = 1f;
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
@@ -103,7 +103,7 @@ public class AstucesManager : MonoBehaviour
             dia.Add("Pour te déplacer avec la voiture, utilise les touches ZQSD de ton clavier ou le joystick gauche de ta manette.");
             dia.Add("Si tu te retrouves coincé, tu peux aller dans le menu pause et appuyer sur Réapparaitre");
             NPCAstuces.SetDialogues(dia);
-            string text = "Aller à l'auditoire 12. Il se trouve au 1er étage et au fond du couloir de droite.";
+            string text = "Pour sortir de la faille spatio-temporelle, dirige-toi vers l'auditoire 12 avant le temps imparti. Il se trouve au 1er étage, à droite au-dessus de l’escalier.";
             string obj = "Objectif : Aller à l'auditoire 12.";
             float timewait = 0f;
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
@@ -127,8 +127,8 @@ public class AstucesManager : MonoBehaviour
             List<string> dia = new List<string>();
             dia.Add("Va voir M.Pyth. Il t'attend au fond de l'auditoire devant le tableau.");
             NPCAstuces.SetDialogues(dia);
-            string text = "Aller parler à M. Pyth";
-            string obj = "Aller parler à M. Pyth";
+            string text = "Va voir M.Pyth. Il t'attend au fond de l'auditoire devant le tableau.";
+            string obj = "Objectif : Aller parler à M. Pyth";
             float timewait = 0f;
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
@@ -137,15 +137,64 @@ public class AstucesManager : MonoBehaviour
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
-            dia.Add("Super ! Tu as réussi toutes les épreuves. Tu es maintenant prêt pour le combat final. Va retrouver M. Jobs qui se trouve dans la cour. Il a quelques mots à te dire avant que tu n’entames la dernière étape de ton parcours.");
+            dia.Add("Génial ! La trigonométrie n'a plus de secret pour toi (ou presque). Retournons dans le couloir pour poursuivre la suite de ton aventure.");
             NPCAstuces.SetDialogues(dia);
-            string text = "Aller dans la cour pour parler à .M Jobs.";
-            string obj = "Aller dans la cour.";
+            string text = "";
+            string obj = "";
             float timewait = 0f;
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
         if (FirstPersonController.Couloir && FirstPersonController.etape == 9)
+        {
+            FirstPersonController.etape += 1;
+            FirstPersonController.Tuto11 = true;
+            List<string> dia = new List<string>();
+            dia.Add("Pour la suite, dirige-toi vers l'auditoire 11 qui se trouve à l'autre bout du couloir de cet étage.");
+            dia.Add("Voici une carte pour mieux te situer.");
+            NPCAstuces.SetDialogues(dia);
+            string text = "Pour la suite, dirige-toi vers l'auditoire 11 qui se trouve à l'autre bout du couloir de cet étage.";
+            string obj = "Objectif : Aller dans l'auditoire 11.";
+            float timewait = 0f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));    
+        }
+
+        if (FirstPersonController.Ho11 && FirstPersonController.etape == 10)
+        {
+            FirstPersonController.etape += 1;
+            List<string> dia = new List<string>();
+            dia.Add("Va parler à M. Heisenberg qui t'attend en bas devant le tableau.");
+            NPCAstuces.SetDialogues(dia);
+            string text = "Va parler à M. Heisenberg qui t'attend en bas devant le tableau.";
+            string obj = "Objectif : Aller parler à M.Heisenberg.";
+            float timewait = 0f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));    
+        }
+
+        if (FirstPersonController.ChimieTalk2End && FirstPersonController.etape == 11)
+        {
+            FirstPersonController.etape += 1;
+            AstuceDialogue = false;
+            string text = "Prépare la solution. Sur la table, tu trouveras une pipette et un soluté que tu devras mettre dans un erlenmyer. Ensuite, allume d'abord la taque puis pose ta solution pour la faire chauffer et accélérer la réaction.";
+            string obj = "Objectif : Préparer la solution.";
+            float timewait = 0f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));    
+        }
+
+
+        if (FirstPersonController.ChimieGame && FirstPersonController.etape == 12)
+        {
+            FirstPersonController.etape += 1;
+            List<string> dia = new List<string>();
+            dia.Add("Super ! Tu as réussi toutes les épreuves. Tu es maintenant prêt pour le combat final. Va retrouver M. Jobs qui se trouve dans la cour. Il a quelques mots à te dire avant que tu n’entames la dernière étape de ton parcours.");
+            NPCAstuces.SetDialogues(dia);
+            string text = "Aller dans la cour pour parler à .M Jobs.";
+            string obj = "Objectif : Aller dans la cour.";
+            float timewait = 2f;
+            StartCoroutine(ChangeAstuces(timewait, text, obj));    
+        }
+
+        if (FirstPersonController.Couloir && FirstPersonController.etape == 13)
         {
             FirstPersonController.etape += 1;
             AstuceDialogue = false;
@@ -155,9 +204,7 @@ public class AstucesManager : MonoBehaviour
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
-
-
-        if (FirstPersonController.DragonGameBegin2 && FirstPersonController.etape == 10)
+        if (FirstPersonController.DragonGameBegin2 && FirstPersonController.etape == 14)
         {
             FirstPersonController.etape += 1;
             FirstPersonController.TutoDragon = true;

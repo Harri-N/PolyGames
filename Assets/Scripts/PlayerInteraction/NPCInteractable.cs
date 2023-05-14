@@ -41,6 +41,7 @@ public class NPCInteractable : InteractableObject
     {
         if ((!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2 && professeur == "mine") 
         || (!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.MecaTalk && !FirstPersonController.MecaTalkEnd && professeur == "meca")
+        || (!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.ChimieTalk2 && !FirstPersonController.ChimieTalk2End && professeur == "chimie")
         || (!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.FortempsTalk && !FirstPersonController.FortempsTalkEnd && professeur == "fortemps") ) {
             foreach (GameObject canva in canvas)
             {
@@ -69,6 +70,9 @@ public class NPCInteractable : InteractableObject
                 break;
             case "math":
                 FirstPersonController.MathTalk = true;
+                break;
+            case "chimie":
+                FirstPersonController.ChimieTalk = true;
                 break;
         }
         Debug.Log("Interact!");

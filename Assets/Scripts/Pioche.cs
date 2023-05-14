@@ -35,20 +35,7 @@ public class Pioche : MonoBehaviour
     {
         swing.Disable();
     }
-/*
-    private void Update() 
-    {
-        if(FirstPersonController.m_IsWalking){
-            anim.SetBool("Walk", true);
-            //anim.speed = fpscontroller.GetSpeed();
-        }
-        else {
-            anim.SetBool("Walk", false);
-            anim.speed = 1f;
-        }
 
-    }
-*/
     public void Swing(InputAction.CallbackContext context)
     {
         if (canSwing && Pickaxe && !FirstPersonController.pause && !FirstPersonController.dialogue)

@@ -73,6 +73,12 @@ public class NextDialogue : MonoBehaviour
                 if (index == 4) {boxTuto.transform.Find("BoxTuto/BoxIconsMove").gameObject.SetActive(true);}
                 if (index == 5) {boxTuto.transform.Find("BoxTuto/BoxIconsStart").gameObject.SetActive(true);}
             }
+            if(FirstPersonController.Tuto11 && !FirstPersonController.Tuto11End)
+            {
+                boxTuto = transform.GetChild(2).gameObject;
+                boxTuto.transform.Find("BoxTuto/BoxMap11").gameObject.SetActive(false);
+                if (index == 3) {boxTuto.transform.Find("BoxTuto/BoxMap11").gameObject.SetActive(true);}
+            }
 
             if(FirstPersonController.TutoDragon && !FirstPersonController.TutoDragonEnd)
             {
@@ -141,14 +147,18 @@ public class NextDialogue : MonoBehaviour
                 if(FirstPersonController.MecaCar && !FirstPersonController.MecaGameBegin) {FirstPersonController.MecaGameBegin = true; }
                 if (FirstPersonController.MecaGame && !FirstPersonController.MathTalk && FirstPersonController.etape < 8) {gameLoader.ChangeScene("Ho12"); }
                 if (FirstPersonController.MathTalk && !FirstPersonController.MathTalkEnd) {FirstPersonController.MathTalkEnd = true;}
-                if (FirstPersonController.MathGame && !FirstPersonController.FortempsTalk) {gameLoader.ChangeScene("Couloir"); }
+                if (FirstPersonController.MathGame && !FirstPersonController.Tuto11) {gameLoader.ChangeScene("Couloir"); }
+                
+                if (FirstPersonController.ChimieTalk && !FirstPersonController.ChimieTalkEnd) {FirstPersonController.ChimieTalkEnd = true;}
+                if (FirstPersonController.ChimieTalk2 && !FirstPersonController.ChimieTalk2End) {FirstPersonController.ChimieTalk2End = true;}
+                if (FirstPersonController.ChimieGame && !FirstPersonController.FortempsTalk) {gameLoader.ChangeScene("Couloir"); }
                 if (FirstPersonController.FortempsTalk && !FirstPersonController.FortempsTalkEnd) {FirstPersonController.FortempsTalkEnd = true;}
 
                 if(FirstPersonController.Tuto1 && !FirstPersonController.Tuto1End) {FirstPersonController.Tuto1End = true;}
                 if(FirstPersonController.TutoMine && !FirstPersonController.TutoMineEnd) {FirstPersonController.TutoMineEnd = true;}
                 if(FirstPersonController.TutoCar && !FirstPersonController.TutoCarEnd) {FirstPersonController.TutoCarEnd = true;}
                 if(FirstPersonController.TutoDragon && !FirstPersonController.TutoDragonEnd) {FirstPersonController.TutoDragonEnd = true;}
-
+                if(FirstPersonController.Tuto11 && !FirstPersonController.Tuto11End) {FirstPersonController.Tuto11End = true;}
                 //On rend inactif le canva
                 gameObject.SetActive(false);
             }
