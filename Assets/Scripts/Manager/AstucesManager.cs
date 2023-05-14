@@ -31,7 +31,7 @@ public class AstucesManager : MonoBehaviour
             FirstPersonController.Tuto1 = true;
             List<string> dia = new List<string>();
             dia.Add("Bonjour ! Je me présente, je m’appelle Qapi et je fais partie de la cellule de pédagogie facultaire QAP-Polytech.");
-            dia.Add("À la Polytech de Mons, nous avons mis en place un dispositif de réussite pour les nouveaux jeunes arrivants. C’est pourquoi je serai là pour t’accompagner et te conseiller tout au long de ton aventure.");
+            dia.Add("À la Polytech de Mons, nous avons mis en place un dispositif de réussite pour les nouveaux arrivants. C’est pourquoi je serai là pour t’accompagner et te conseiller tout au long de ton aventure.");
             dia.Add("N’hésite pas à me consulter en appuyant sur le bouton start ou la touche Tab. Tu trouveras dans la rubrique « astuces » un rappel de la mission en cours.");
             dia.Add("Pour commencer, rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier, tu trouvera M. Pierre. Il te donnera la 1ère épreuve.");
             dia.Add("Pour te déplacer, utilise les touches ZQSD de ton clavier ou le joystick gauche de ta manette.");
@@ -49,7 +49,7 @@ public class AstucesManager : MonoBehaviour
             FirstPersonController.etape += 1;
             FirstPersonController.TutoMine = true;
             List<string> dia = new List<string>();
-            dia.Add("Nous voilà dans la grotte. Tu trouveras les matières premières au fond de celle-ci.");
+            dia.Add("Nous voilà dans la mine. Tu trouveras les matières premières au fond de celle-ci.");
             dia.Add("Pour sauter et éviter les obstacles, utilise la touche espace de ton clavier ou le bouton A de ta manette.");
             dia.Add("Pour frapper avec la pioche, utilise le clic gauche de ta souris ou la touche RT de ta manette.");
             NPCAstuces.SetDialogues(dia);
@@ -98,7 +98,8 @@ public class AstucesManager : MonoBehaviour
             FirstPersonController.etape += 1;
             FirstPersonController.TutoCar = true;
             List<string> dia = new List<string>();
-            dia.Add("Pour sortir de la faille spatio-temporelle, dirige-toi vers l'auditoire 12 avant le temps imparti. Il se trouve au 1er étage et au fond du couloir de droite. ");
+            dia.Add("Pour sortir de la faille spatio-temporelle, dirige-toi vers l'auditoire 12 avant le temps imparti.");
+            dia.Add("L'auditoire 12 se trouve au 1er étage, à droite au-dessus de l’escalier.");
             dia.Add("Pour te déplacer avec la voiture, utilise les touches ZQSD de ton clavier ou le joystick gauche de ta manette.");
             dia.Add("Si tu te retrouves coincé, tu peux aller dans le menu pause et appuyer sur Réapparaitre");
             NPCAstuces.SetDialogues(dia);
@@ -112,7 +113,7 @@ public class AstucesManager : MonoBehaviour
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
-            dia.Add("Super, tu es arrivé à temps ! Rentrons vite à l'intérieur.");
+            dia.Add("Super, tu es arrivé à temps ! Rentre maintenant vite à l'intérieur de l’auditoire 12. C’est là que la majorité des cours de premières années se déroule.");
             NPCAstuces.SetDialogues(dia);
             string text = "";
             string obj = "";
@@ -136,7 +137,7 @@ public class AstucesManager : MonoBehaviour
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
-            dia.Add("Super ! Tu as réussi toutes les épreuves. Tu es maintenant prêt pour le combat final. Va retrouver M. Jobs qui dans la cour. Il a quelques mots à te dire avant que tu n’entames la dernière étape de ton parcours.");
+            dia.Add("Super ! Tu as réussi toutes les épreuves. Tu es maintenant prêt pour le combat final. Va retrouver M. Jobs qui se trouve dans la cour. Il a quelques mots à te dire avant que tu n’entames la dernière étape de ton parcours.");
             NPCAstuces.SetDialogues(dia);
             string text = "Aller dans la cour pour parler à .M Jobs.";
             string obj = "Aller dans la cour.";

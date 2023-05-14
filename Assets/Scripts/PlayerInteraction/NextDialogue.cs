@@ -68,8 +68,10 @@ public class NextDialogue : MonoBehaviour
                 boxTuto = transform.GetChild(2).gameObject;
                 boxTuto.transform.Find("BoxTuto/BoxIconsMove").gameObject.SetActive(false);
                 boxTuto.transform.Find("BoxTuto/BoxIconsStart").gameObject.SetActive(false);
-                if (index == 3) {boxTuto.transform.Find("BoxTuto/BoxIconsMove").gameObject.SetActive(true);}
-                if (index == 4) {boxTuto.transform.Find("BoxTuto/BoxIconsStart").gameObject.SetActive(true);}
+                boxTuto.transform.Find("BoxTuto/BoxMapCourse").gameObject.SetActive(false);
+                if (index == 3) {boxTuto.transform.Find("BoxTuto/BoxMapCourse").gameObject.SetActive(true);}
+                if (index == 4) {boxTuto.transform.Find("BoxTuto/BoxIconsMove").gameObject.SetActive(true);}
+                if (index == 5) {boxTuto.transform.Find("BoxTuto/BoxIconsStart").gameObject.SetActive(true);}
             }
 
             if(FirstPersonController.TutoDragon && !FirstPersonController.TutoDragonEnd)
