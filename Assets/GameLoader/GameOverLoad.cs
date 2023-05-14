@@ -10,7 +10,7 @@ public class GameOverLoad : MonoBehaviour
 
     private void Awake() 
     {
-        if (FirstPersonController.etape < 7) {
+        if (FirstPersonController.etape < 8) {
             nom_scene = "CouloirCar";
 			FirstPersonController.MecaTalkEnd = false;
 			FirstPersonController.MecaCar = false;

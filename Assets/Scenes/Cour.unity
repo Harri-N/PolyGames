@@ -7088,7 +7088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: "Parler \xE0 la doyenne"
   dialogues:
-  - "Bonjour et bienvenu \xE0 la Facult\xE9 Polytechnique de Mons. Ici, nous formons
+  - "Bonjour et bienvenue \xE0 la Facult\xE9 Polytechnique de Mons. Ici, nous formons
     les futurs ing\xE9nieurs, ceux qui fa\xE7onneront le monde de demain. "
   - "Malheureusement, ce monde est en danger. En effet, le dragon du Doudou menace
     d\u2019attaquer la ville. Nous avons donc besoin de toi pour faire face \xE0

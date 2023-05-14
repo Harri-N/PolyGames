@@ -129,11 +129,20 @@ public class CarInteractable : InteractableObject
                 }
             }
         }
-            
-        if(isInside && StarterAssets.FirstPersonController.MecaGameBegin && !StarterAssets.FirstPersonController.MecaGame && !StarterAssets.FirstPersonController.pause && !StarterAssets.FirstPersonController.dialogue)
+
+        if(isInside && !StarterAssets.FirstPersonController.pause && !StarterAssets.FirstPersonController.dialogue && !StarterAssets.FirstPersonController.MecaGame)
         {
             car.GetComponent<CarController>().enabled = true;
             car.GetComponent<CarUserControl>().enabled = true;
+        }
+        else 
+        {
+            car.GetComponent<CarController>().enabled = false;
+            car.GetComponent<CarUserControl>().enabled = false;
+        }
+
+        if(isInside && StarterAssets.FirstPersonController.MecaGameBegin && !StarterAssets.FirstPersonController.MecaGame && !StarterAssets.FirstPersonController.pause && !StarterAssets.FirstPersonController.dialogue)
+        {
             timeRemaining -= Time.deltaTime;
             Display(timeRemaining);
             if (timeRemaining <= 0f)

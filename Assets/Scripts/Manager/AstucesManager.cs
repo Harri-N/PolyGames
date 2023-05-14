@@ -33,7 +33,7 @@ public class AstucesManager : MonoBehaviour
             dia.Add("Bonjour ! Je me présente, je m’appelle Qapi et je fais partie de la cellule de pédagogie facultaire QAP-Polytech.");
             dia.Add("À la Polytech de Mons, nous avons mis en place un dispositif de réussite pour les nouveaux arrivants. C’est pourquoi je serai là pour t’accompagner et te conseiller tout au long de ton aventure.");
             dia.Add("N’hésite pas à me consulter en appuyant sur le bouton start ou la touche Tab. Tu trouveras dans la rubrique « astuces » un rappel de la mission en cours.");
-            dia.Add("Pour commencer, rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier, tu trouvera M. Pierre. Il te donnera la 1ère épreuve.");
+            dia.Add("Pour commencer, rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier, tu trouveras M. Pierre. Il te donnera la 1ère épreuve.");
             dia.Add("Pour te déplacer, utilise les touches ZQSD de ton clavier ou le joystick gauche de ta manette.");
             dia.Add("Pour orienter la caméra, utilise ta souris ou le joystick droit de ta manette. Tu peux modifier la sensibilité dans les paramètres du menu pause.");
             dia.Add("Pour interagir avec ton environnement, utilise la touche E de ton clavier ou le bouton X de ta manette.");
@@ -75,7 +75,7 @@ public class AstucesManager : MonoBehaviour
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
-            dia.Add("Maintenat que tu as réussi la 1ère épreuve, va rejoindre M. Newton. Il t’attend dans le hall. Tu peux rentrer dans le bâtiment par l’entrée principale.");
+            dia.Add("Maintenant que tu as réussi la 1ère épreuve, va rejoindre M. Newton. Il t’attend dans le hall. Tu peux rentrer dans le bâtiment par l’entrée principale.");
             NPCAstuces.SetDialogues(dia);
             string text = "Va voir M. Newton à l'entrée du bâtiment principal.";
             string obj = "Objectif : Aller parler à M. Newton.";
@@ -113,7 +113,7 @@ public class AstucesManager : MonoBehaviour
         {
             FirstPersonController.etape += 1;
             List<string> dia = new List<string>();
-            dia.Add("Super, tu es arrivé à temps ! Rentre maintenant vite à l'intérieur de l’auditoire 12. C’est là que la majorité des cours de premières années se déroule.");
+            dia.Add("Super, tu es arrivé à temps ! Rentre maintenant vite à l'intérieur de l’auditoire 12. C’est là que la majorité des cours de première année se déroule.");
             NPCAstuces.SetDialogues(dia);
             string text = "";
             string obj = "";
