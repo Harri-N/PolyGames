@@ -23,15 +23,15 @@ public class Stove : MonoBehaviour
         materials = new List<Material>();
         foreach (var renderer in renderers)
         {
-            //A single child-object might have mutliple materials on it
-            //that is why we need to all materials with "s"
             materials.AddRange(new List<Material>(renderer.materials));
         }
     }
+    //premet aux autres scirpts de connaitre l état du four
     public bool GetStoveState()
     {
         return stoveState;
     }
+    //permet d allumer et éteindre le four et change les shaders en fonction de son état
     public void Power(bool val)
     {
         Debug.Log(val);
@@ -52,12 +52,11 @@ public class Stove : MonoBehaviour
 
             foreach (var material in materials)
             {
-                //we can just disable the EMISSION
-                //if we don't use emission color anywhere else
+
                 material.shader = shader1;
             }
         }
     }
-    // Start is called before the first frame update
+
     
 }
