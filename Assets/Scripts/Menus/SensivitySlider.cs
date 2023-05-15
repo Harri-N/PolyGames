@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using StarterAssets;
 
+//Ce script permet de changer la sensibilité de la caméra
+//Elle associe la valeur du slider dans les paramètres à la vitesse de rotation du personnage
+
 public class SensivitySlider : MonoBehaviour
 {
     private Slider sensivity;

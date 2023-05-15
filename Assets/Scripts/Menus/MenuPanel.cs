@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Ce script doit être associé à chaque panneau d'un menu
+//Il permet de définir le type de panneau et l'objet à sélectionner par défaut
+//Il permet de changer l'état du panneau (ouvert ou fermé)
+
 [RequireComponent(typeof(Canvas))]
 public class MenuPanel : MonoBehaviour
 {
+
     [SerializeField] private PanelType type;
 
     [Header("Config")]
@@ -14,6 +19,7 @@ public class MenuPanel : MonoBehaviour
 
     private Canvas canvas;
     private MenuController controller;
+
 
     private void Awake()
     {

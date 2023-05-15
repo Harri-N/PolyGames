@@ -7,21 +7,23 @@ using TMPro;
 
 public class NPCInteractable : InteractableObject
 {
-    [SerializeField] private List<string> dialogues = new List<string>();
-    [SerializeField] private string Nom;
+    [Header("Physique")]
     [SerializeField] private GameObject player; 
     public GameObject head;
-    private FirstPersonController fpscontroller;
-    private Animator animator;
-    private NPCLookAt npcLookAt;
 
+    [Header("Dialogues")]
+    [SerializeField] private string Nom;
+    [SerializeField] private string professeur;
+    [SerializeField] private List<string> dialogues = new List<string>();
+    [SerializeField] private List<GameObject> canvas = new List<GameObject>();
+
+    [Header("Template Canva")]
     public GameObject d_template;
     public GameObject canva;
 
-    [SerializeField] private string professeur;
-    [SerializeField] private List<GameObject> canvas = new List<GameObject>();
-    
-    
+    private FirstPersonController fpscontroller;
+    private Animator animator;
+    private NPCLookAt npcLookAt;
 
     private void Awake()
     {
@@ -37,6 +39,8 @@ public class NPCInteractable : InteractableObject
         }
         
     }
+
+    //Fonction qui lance un dialogue lors d'étape précise
     private void Update()
     {
         if ((!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2 && professeur == "mine") 
@@ -51,6 +55,7 @@ public class NPCInteractable : InteractableObject
         }
     }
 
+    //Fonction qui permet de créer des boites de dialogues à partir d'un template
     public void NewDialogue(string text) 
     {
         GameObject template_clone = Instantiate(d_template, d_template.transform);
@@ -61,6 +66,7 @@ public class NPCInteractable : InteractableObject
 
     public override void Interact(Transform interactorTransform) 
     {
+        //On marque la fin d'une étape en fonction du NPC
         switch(professeur) {
             case "doyen":
                 FirstPersonController.Doyen = true;
@@ -75,11 +81,13 @@ public class NPCInteractable : InteractableObject
                 FirstPersonController.ChimieTalk = true;
                 break;
         }
-        Debug.Log("Interact!");
+
+        //Changement d'animation et on tourne le NPC vers le joueur
         animator.SetTrigger("Talk");
         float playerHeight = 0f;
         npcLookAt.LookAtPosition(interactorTransform.position + Vector3.up * playerHeight);
 
+        //On fait appairaitre les boites de dialogues
         canva.SetActive(true);
         FirstPersonController.dialogue = true;
         foreach (string dialogue in dialogues) {
@@ -88,6 +96,7 @@ public class NPCInteractable : InteractableObject
         canva.transform.GetChild(2).gameObject.SetActive(true); 
     }
 
+    //Fonction qui permet de changer les dialogues
     public void SetDialogues(List<string> dia){
         dialogues = dia;
     }

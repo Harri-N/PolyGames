@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Fonction qui permet de changer de scène quand le joueur interagit avec une porte
+
 public class DoorInteractable : InteractableObject
 {
     [SerializeField] private GameLoader gameLoader;

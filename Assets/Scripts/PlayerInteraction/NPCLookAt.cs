@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
+//Ce script permet de faire en sorte qu'un NPC se tourne vers le joueur durant un dialogue
+
 public class NPCLookAt : MonoBehaviour
 {
     [SerializeField] private Rig rig;
