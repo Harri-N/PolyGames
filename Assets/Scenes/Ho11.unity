@@ -14096,6 +14096,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactText: "Parler \xE0 M.Heisenberg"
+  player: {fileID: 795947133}
+  head: {fileID: 0}
+  Nom: M. Heisenberg
+  professeur: chimie
   dialogues:
   - "C\u2019est donc toi qui veux t\u2019opposer au dragon. Je te pr\xE9viens, ici,
     on ne joue pas aux apprentis sorciers. "
@@ -14105,15 +14109,11 @@ MonoBehaviour:
   - "Je veux bien t\u2019aider dans ton combat en produisant une substance qui te
     prot\xE9geras des flammes. Mais avant, voyons voir si tu n\u2019es pas un charlatan
     et si tu sais de quoi il s\u2019agit."
-  Nom: M. Heisenberg
-  player: {fileID: 795947133}
-  head: {fileID: 0}
-  d_template: {fileID: 754369841}
-  canva: {fileID: 1538095574}
-  professeur: chimie
   canvas:
   - {fileID: 1408881523}
   - {fileID: 1725387661}
+  d_template: {fileID: 754369841}
+  canva: {fileID: 1538095574}
 --- !u!114 &1677114417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14197,6 +14197,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactText: Parler au Doyen
+  player: {fileID: 0}
+  head: {fileID: 2043599378}
+  Nom: Doyen
+  professeur: meca
   dialogues:
   - "Bonjour et bienvenu \xE0 la Facult\xE9 Polytechnique de Mons. Ici, nous formons
     les futurs ing\xE9nieurs, ceux qui fa\xE7onneront le monde de demain. "
@@ -14210,15 +14214,11 @@ MonoBehaviour:
     d\u2019acqu\xE9rir les comp\xE9tences et les outils n\xE9cessaires pour affronter
     le dragon. "
   - "Je n\u2019ai plus qu\u2019\xE0 te souhaiter bon courage dans ton aventure."
-  Nom: Doyen
-  player: {fileID: 0}
-  head: {fileID: 2043599378}
-  d_template: {fileID: 754369841}
-  canva: {fileID: 1538095574}
-  professeur: meca
   canvas:
   - {fileID: 1408881523}
   - {fileID: 1725387661}
+  d_template: {fileID: 754369841}
+  canva: {fileID: 1538095574}
 --- !u!114 &1691861361
 MonoBehaviour:
   m_ObjectHideFlags: 0

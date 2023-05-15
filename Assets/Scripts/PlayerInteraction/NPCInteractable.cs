@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using StarterAssets;
 using UnityEngine.InputSystem;
@@ -24,12 +25,43 @@ public class NPCInteractable : InteractableObject
     private FirstPersonController fpscontroller;
     private Animator animator;
     private NPCLookAt npcLookAt;
+    private ReadFileLine read;
+    private string Lg;
 
     private void Awake()
     {
+        read = new ReadFileLine();
         animator = GetComponent<Animator>();
         npcLookAt = GetComponent<NPCLookAt>();
         fpscontroller = GetComponent<FirstPersonController>();
+        Lg = FirstPersonController.Language;
+        switch(professeur)
+        {
+            case "doyen":
+                SetNPCtxt("Dialogues" + Lg + "_Doyenne.txt");
+                break;
+            
+            case "mine":
+                SetNPCtxt("Dialogues" + Lg + "_Mine1.txt");
+                break;
+            
+            case "meca":
+                SetNPCtxt("Dialogues" + Lg + "_Meca.txt");
+                break;
+
+            case "math":
+                SetNPCtxt("Dialogues" + Lg + "_Math.txt");
+                break;
+
+            case "chimie":
+                SetNPCtxt("Dialogues" + Lg + "_Chimie1.txt");
+                break;
+            
+            case "fortemps":
+                SetNPCtxt("Dialogues" + Lg + "_Jobs.txt");
+                break;
+
+        }
         if(FirstPersonController.etape == 0 && professeur == "doyen") {
             foreach (GameObject canva in canvas)
             {
@@ -99,6 +131,39 @@ public class NPCInteractable : InteractableObject
     //Fonction qui permet de changer les dialogues
     public void SetDialogues(List<string> dia){
         dialogues = dia;
+    }
+
+
+    public void SetNom(string name){
+        Nom = name;
+    }
+
+    public void SetNPCtxt(string fileName)
+    {
+        List<string> text = new List<string>();
+        text = read.Lecture(fileName);
+        SetNom(text[0]);
+        text.RemoveAt(0);
+        SetInteractText(text[0]);
+        text.RemoveAt(0);
+        SetDialogues(text);
+    }
+
+    public List<string> SetNPCAstuce(string fileName)
+    {
+        List<string> text = new List<string>();
+        List<string> objectif = new List<string>();
+        text = read.Lecture(fileName);
+        SetNom(text[0]);
+        text.RemoveAt(0);
+        SetInteractText(text[0]);
+        text.RemoveAt(0);
+        objectif.Add(text[0]);
+        text.RemoveAt(0);
+        objectif.Add(text[0]);
+        text.RemoveAt(0);
+        SetDialogues(text);
+        return objectif;
     }
 
     public NPCLookAt GetLookAt() {

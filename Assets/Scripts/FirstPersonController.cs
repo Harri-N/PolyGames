@@ -83,6 +83,9 @@ namespace StarterAssets
 		static public bool dialogue = false;
 		static public bool pause = false;
 
+		//Langue
+		static public string Language = "";
+
 		// Success
 		static public int etape = 0;
 		static public bool GameOver = false;
@@ -137,6 +140,7 @@ namespace StarterAssets
 		static public void Restart()
 		{
 			etape = 0;
+			Language = "";
 			GameOver = false;
 			Doyen = false;
 			DoyenEnd = false;

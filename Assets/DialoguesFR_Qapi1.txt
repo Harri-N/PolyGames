@@ -1,0 +1,7 @@
+Qapi
+Parler à Qapi
+Aller au fond de la grotte et récolter du calcaire.
+Objectif : Récolter du calcaire.
+Nous voilà dans la mine. Tu trouveras les matières premières au fond de celle-ci.
+Pour sauter et éviter les obstacles, utilise la touche espace de ton clavier ou le bouton A de ta manette.
+Pour frapper avec la pioche, utilise le clic gauche de ta souris ou la touche RT de ta manette.

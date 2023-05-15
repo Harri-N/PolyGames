@@ -1380,6 +1380,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactText: "Parler \xE0 M. Pyth"
+  player: {fileID: 44588106877184276}
+  head: {fileID: 0}
+  Nom: M. Pyth
+  professeur: math
   dialogues:
   - "Bonjour, j\u2019enseigne les math\xE9matiques, une mati\xE8re plus que passionnante
     !"
@@ -1387,15 +1391,11 @@ MonoBehaviour:
     indispensables dans tous les domaines de l\u2019ing\xE9nierie. C\u2019est pourquoi
     je serai l\xE0 pour t\u2019apprendre des choses qui te seront sans aucun doute
     utiles pour la suite."
-  Nom: M. Pyth
-  player: {fileID: 44588106877184276}
-  head: {fileID: 0}
-  d_template: {fileID: 754369841}
-  canva: {fileID: 1538095574}
-  professeur: math
   canvas:
   - {fileID: 1408881523}
   - {fileID: 1725387661}
+  d_template: {fileID: 754369841}
+  canva: {fileID: 1538095574}
 --- !u!114 &582475290
 MonoBehaviour:
   m_ObjectHideFlags: 0

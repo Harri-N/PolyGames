@@ -1,0 +1,11 @@
+Qapi
+Parler à Qapi
+Rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier et va parler à M.Pierre.
+Objectif : Aller parler à M.Pierre.
+Bonjour ! Je me présente, je m’appelle Qapi et je fais partie de la cellule de pédagogie facultaire QAP-Polytech.
+À la Polytech de Mons, nous avons mis en place un dispositif de réussite pour les nouveaux arrivants. C’est pourquoi je serai là pour t’accompagner et te conseiller tout au long de ton aventure.
+N’hésite pas à me consulter en appuyant sur le bouton start ou la touche Tab. Tu trouveras dans la rubrique « astuces » un rappel de la mission en cours.
+Pour commencer, rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier, tu trouveras M. Pierre. Il te donnera la 1ère épreuve.
+Pour te déplacer, utilise les touches ZQSD de ton clavier ou le joystick gauche de ta manette.
+Pour orienter la caméra, utilise ta souris ou le joystick droit de ta manette. Tu peux modifier la sensibilité dans les paramètres du menu pause.
+Pour interagir avec ton environnement, utilise la touche E de ton clavier ou le bouton X de ta manette.

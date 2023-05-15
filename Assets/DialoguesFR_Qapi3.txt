@@ -1,0 +1,5 @@
+Qapi
+Parler à Qapi
+Va voir M. Newton qui t’attend dans le hall. Tu peux rentrer dans le bâtiment par l’entrée principale.
+Objectif : Aller parler à M. Newton.
+Maintenant que tu as réussi la 1ère épreuve, va rejoindre M. Newton. Il t’attend dans le hall. Tu peux rentrer dans le bâtiment par l’entrée principale.

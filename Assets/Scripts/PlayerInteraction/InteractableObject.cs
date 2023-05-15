@@ -15,4 +15,7 @@ public class InteractableObject : MonoBehaviour
     public string GetInteractText() {
         return interactText;
     }
+
+    public void SetInteractText(string text) {interactText = text;}
+    
 }

@@ -45,6 +45,8 @@ public class CourLoad : MonoBehaviour
     private float timeRemaining = 60.0f;
     private float timer = 0f;
 
+    private string Lg;
+
     [SerializeField] private TextMeshProUGUI TimerText;
 
     private void Awake() {
@@ -55,14 +57,14 @@ public class CourLoad : MonoBehaviour
         targetPosition = transform.GetChild(0).position;
         targetPosition2 = transform.GetChild(1).position;
 
+        Lg = FirstPersonController.Language;
+
         if (FirstPersonController.MineGame)
         {
             doyenne.SetActive(false);
             player.transform.position = targetPosition;
             player.transform.rotation = Quaternion.Euler(0f,-90f,0f);
-            List<string> dia = new List<string>();
-            dia.Add("Merci d'avoir récupéré ces matériaux. Nous les utiliserons pour t'aider dans ta quête.");
-            mineNPC.SetDialogues(dia);
+            mineNPC.SetNPCtxt("Dialogues" + Lg + "_Mine2.txt");
             FirstPersonController.MineTalk2 = true;
         }
         

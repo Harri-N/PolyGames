@@ -18,6 +18,12 @@ public class ChimieGame : MonoBehaviour
     [SerializeField] private NPCInteractable chimieGuy;
     public Animator transition;
     private bool begin = false;
+
+    private string Lg;
+
+    private void Awake() {
+        Lg = FirstPersonController.Language;
+    }
     
 
     private void Update() 
@@ -59,12 +65,8 @@ public class ChimieGame : MonoBehaviour
         AimPoint.SetActive(true);
         transition.ResetTrigger("FadeOut");
 
-        List<string> dia = new List<string>();
-        dia.Add("Et oui ! Quoi de mieux que l'eau pour combattre le feu.");
-        dia.Add("Maintenant, il ne te reste plus qu'à produire cette réaction. Sur la table à ta gauche, tu trouveras une pipette et un soluté que tu devras mettre dans un erlenmyer.");
-        dia.Add("Ensuite, allume la taque qui se trouve derrière toi et fais chauffer ta solution pour accélérer la réaction.");
-        dia.Add("Si tu perds un objet, appuie sur le bouton Réapparaitre dans le menu Pause.");
-        chimieGuy.SetDialogues(dia);
+        
+        chimieGuy.SetNPCtxt("Dialogues" + Lg + "_Chimie2.txt");
         FirstPersonController.ChimieTalk2 = true;
     }
 

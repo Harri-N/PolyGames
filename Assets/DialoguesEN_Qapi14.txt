@@ -1,0 +1,6 @@
+Qapi
+Talk to Qapi
+To defeat the dragon, all you have to do is hit it with the lasers.
+Objective: Defeat the dragon.
+To defeat the dragon, all you have to do is hit it with the lasers.
+To shoot, use the left mouse button or the RT button on your controller.

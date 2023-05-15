@@ -92,4 +92,7 @@ public class MenuController : MonoBehaviour
     {
         eventController.SetSelectedGameObject(null);
     }
+
+    public void SetFR() {FirstPersonController.Language = "FR";}
+    public void SetEN() {FirstPersonController.Language = "EN";}
 }
