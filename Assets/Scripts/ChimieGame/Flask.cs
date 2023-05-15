@@ -10,11 +10,11 @@ public class Flask : MonoBehaviour
     private List<Renderer> renderers;
 
     [SerializeField]
-    private Color color = Color.blue;
+    private Color color;
     [SerializeField]
-    private Color brownColor = Color.yellow;
+    private Color brownColor;
     [SerializeField]
-    private Color readyColor = Color.red;
+    private Color readyColor;
     [SerializeField]
     public GameObject parent;
     //helper list to cache all the materials ofd this object

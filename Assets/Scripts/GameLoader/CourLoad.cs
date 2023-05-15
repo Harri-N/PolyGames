@@ -76,7 +76,7 @@ public class CourLoad : MonoBehaviour
             //FirstPersonController.MathGame = true;
         }
 
-        if (FirstPersonController.MathGame)
+        if (FirstPersonController.ChimieGame)
         {
             mineGuy.SetActive(false);
             Fortemps.SetActive(true);

@@ -21,6 +21,7 @@ public class CouloirLoad : MonoBehaviour
         if (FirstPersonController.ChimieGame)
         {
             audio.clip = dramaSound;
+            audio.Play();
         }
         if (FirstPersonController.Ho11)
         {

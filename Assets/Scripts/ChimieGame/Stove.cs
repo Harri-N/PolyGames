@@ -10,7 +10,7 @@ public class Stove : MonoBehaviour
     private List<Renderer> renderers;
 
     [SerializeField]
-    private Color color = Color.red;
+    private Color color;
 
     [SerializeField]
     private Shader shader1;

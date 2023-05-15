@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject useUI2;
     [SerializeField] private GameObject useUI3;
     [SerializeField] private GameObject dropUI;
+    [SerializeField] private GameObject pipette;
+    [SerializeField] private GameObject rocks;
     // Range 
     [SerializeField][Min(1)] private float hitRange;
 
@@ -133,6 +135,9 @@ public class Player : MonoBehaviour
                             {
                                 Debug.Log("R");
                                 currentHit.collider.GetComponent<Flask>().Fill(true);
+                                pipette.SetActive(false);
+                                inHandItem = null;
+                                return;
                             }
                         }
                         
@@ -167,6 +172,9 @@ public class Player : MonoBehaviour
                             {
                                 Debug.Log("R");
                                 currentHit2.collider.GetComponent<Flask>().Full(true);
+                                rocks.SetActive(false);
+                                inHandItem = null;
+                                return;
                             }
                         }
 

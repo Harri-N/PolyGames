@@ -40,7 +40,7 @@ public class AstucesManager : MonoBehaviour
             NPCAstuces.SetDialogues(dia);
             string text = "Rends-toi devant l’aile gauche du bâtiment. À l’entrée du service de Génie Minier et va parler à M.Pierre.";
             string obj = "Objectif : Aller parler à M.Pierre.";
-            float timewait = 1f;
+            float timewait = 0.5f;
             StartCoroutine(ChangeAstuces(timewait, text, obj));
         }
 
@@ -79,7 +79,7 @@ public class AstucesManager : MonoBehaviour
             NPCAstuces.SetDialogues(dia);
             string text = "Va voir M. Newton qui t’attend dans le hall. Tu peux rentrer dans le bâtiment par l’entrée principale.";
             string obj = "Objectif : Aller parler à M. Newton.";
-            float timewait = 1f;
+            float timewait = 0.5f;
             StartCoroutine(ChangeAstuces(timewait, text, obj));    
         }
 
