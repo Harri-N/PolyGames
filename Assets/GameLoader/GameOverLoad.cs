@@ -28,7 +28,7 @@ public class GameOverLoad : MonoBehaviour
 			FirstPersonController.DragonGame = false;
             FirstPersonController.GameOver = false;
             FirstPersonController.Couloir = true;
-            FirstPersonController.etape = 10;
+            FirstPersonController.etape = 14;
         }
     }
 

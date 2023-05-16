@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using StarterAssets;
 
+//script permettant d'associer l'action de la pioche à une fonction
 public class Pioche : MonoBehaviour
 {
     private FirstPerson playerControls;
@@ -16,6 +17,7 @@ public class Pioche : MonoBehaviour
     public bool Pickaxe = true;
 
     
+    //on définit le Controller du player et l'Animator
     void Awake(){
         playerControls = new FirstPerson();
         fpscontroller = GetComponent<FirstPersonController>();
@@ -23,6 +25,7 @@ public class Pioche : MonoBehaviour
         canSwing = true;
     }
     
+    //Fonction appelée quand le Swing est activé
     private void OnEnable()
     {
         swing = playerControls.Player.Swing;
@@ -31,24 +34,13 @@ public class Pioche : MonoBehaviour
         swing.performed += Swing;
     }
 
+    //Fonction appelée quand le Swing est désactivé
     private void OnDisable()
     {
         swing.Disable();
     }
-/*
-    private void Update() 
-    {
-        if(FirstPersonController.m_IsWalking){
-            anim.SetBool("Walk", true);
-            //anim.speed = fpscontroller.GetSpeed();
-        }
-        else {
-            anim.SetBool("Walk", false);
-            anim.speed = 1f;
-        }
 
-    }
-*/
+    //Fonction définissant l'action Swing
     public void Swing(InputAction.CallbackContext context)
     {
         if (canSwing && Pickaxe && !FirstPersonController.pause && !FirstPersonController.dialogue)
@@ -72,7 +64,9 @@ public class Pioche : MonoBehaviour
                         //}
                     }
                     
-                
+                    
+                    //Quand on frappe un objet avec la pioche est que celui-ci est un rocher (tag = "Rock"
+                    //La fonction Tapped() de cet objet est appelée (elle permet la destruction de l'objet)
                     if(hit.collider.tag == "Rock")
                     {
                         hit.collider.GetComponent<Resource>().Tapped();

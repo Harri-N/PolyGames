@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.UI;
 using UnityEngine;
+using StarterAssets;
 
 public class Flask : MonoBehaviour
 {
@@ -104,9 +105,9 @@ public class Flask : MonoBehaviour
             {
                 if(collision.collider.GetComponent<Stove>().GetStoveState() == true)
                 {
-                    Debug.Log("fumée");
+                    Debug.Log("fumï¿½e");
                     parent.transform.GetChild(1).gameObject.SetActive(true);
-                    
+                    FirstPersonController.ChimieGame = true;
                 }
             }
 
