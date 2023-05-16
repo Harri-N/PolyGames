@@ -26,7 +26,6 @@ public class CourLoad : MonoBehaviour
     [SerializeField] private GameObject InGameCanva;
     [SerializeField] private GameObject DragonFlammes;
     
-    private NPCInteractable mineNPC;
     private Vector3 targetPosition;
     private Vector3 targetPosition2;
 
@@ -51,7 +50,6 @@ public class CourLoad : MonoBehaviour
 
     private void Awake() {
         
-        mineNPC = mineGuy.GetComponent<NPCInteractable>();
         animDragon = dragon.GetComponent<Animator>();
 
         targetPosition = transform.GetChild(0).position;
@@ -64,7 +62,6 @@ public class CourLoad : MonoBehaviour
             doyenne.SetActive(false);
             player.transform.position = targetPosition;
             player.transform.rotation = Quaternion.Euler(0f,-90f,0f);
-            mineNPC.SetNPCtxt("Dialogues" + Lg + "_Mine2.txt");
             FirstPersonController.MineTalk2 = true;
         }
         
@@ -75,12 +72,15 @@ public class CourLoad : MonoBehaviour
             player.transform.rotation = Quaternion.Euler(0f,180f,0f);
             player.SetActive(true);
             FirstPersonController.Couloir = false;
-            //FirstPersonController.MathGame = true;
+        }
+
+        if (FirstPersonController.MecaGame)
+        {
+            mineGuy.SetActive(false);
         }
 
         if (FirstPersonController.ChimieGame)
         {
-            mineGuy.SetActive(false);
             Fortemps.SetActive(true);
             dragon.SetActive(true);
             FirstPersonController.FortempsTalk = true;

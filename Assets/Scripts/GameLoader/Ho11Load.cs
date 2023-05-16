@@ -9,10 +9,9 @@ public class Ho11Load : MonoBehaviour
     [SerializeField] private GameObject Rock;
     [SerializeField] private GameObject pipette;
     [SerializeField] private GameObject Erlenmyer;
-
-    private Rigidbody r1;
-    private Rigidbody r2;
-    private Rigidbody r3;
+    [SerializeField] private GameObject ChimieNPC;
+    [SerializeField] private GameObject tableau;
+    [SerializeField] private GameObject four;
 
     private FirstPersonController fpscontroller;
     private void Awake() {
@@ -28,10 +27,13 @@ public class Ho11Load : MonoBehaviour
         transform.Find("p1").rotation = Rock.transform.rotation;
         transform.Find("p2").rotation = pipette.transform.rotation;
         transform.Find("p3").rotation = Erlenmyer.transform.rotation;
-
-        r1 = Rock.GetComponent<Rigidbody>();
-        r2 = Rock.GetComponent<Rigidbody>();
-        r3 = Rock.GetComponent<Rigidbody>();
+        if(FirstPersonController.MathGame)
+        {
+            tableau.SetActive(true);
+            ChimieNPC.SetActive(true);
+            four.SetActive(true);
+        }
+        
     }
 
     public void Reset()

@@ -14,6 +14,8 @@ public class CouloirCarLoad : MonoBehaviour
         transform.Find("StartPoint").rotation = car.transform.rotation;
     }
 
+
+
     public void Reset()
     {
         car.transform.position = transform.Find("StartPoint").position;

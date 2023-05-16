@@ -13,10 +13,10 @@ public class NPCInteractable : InteractableObject
     public GameObject head;
 
     [Header("Dialogues")]
-    [SerializeField] private string Nom;
     [SerializeField] private string professeur;
-    [SerializeField] private List<string> dialogues = new List<string>();
     [SerializeField] private List<GameObject> canvas = new List<GameObject>();
+    private string Nom;
+    private List<string> dialogues = new List<string>();
 
     [Header("Template Canva")]
     public GameObject d_template;
@@ -43,6 +43,7 @@ public class NPCInteractable : InteractableObject
             
             case "mine":
                 SetNPCtxt("Dialogues" + Lg + "_Mine1.txt");
+                if(FirstPersonController.MineGame) {SetNPCtxt("Dialogues" + Lg + "_Mine2.txt");}
                 break;
             
             case "meca":
@@ -76,9 +77,10 @@ public class NPCInteractable : InteractableObject
     private void Update()
     {
         if ((!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.MineTalk2 && !FirstPersonController.MineTalkEnd2 && professeur == "mine") 
-        || (!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.MecaTalk && !FirstPersonController.MecaTalkEnd && professeur == "meca")
+        ||(!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.MecaTalk && !FirstPersonController.MecaTalkEnd && professeur == "meca")
         || (!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.ChimieTalk2 && !FirstPersonController.ChimieTalk2End && professeur == "chimie")
         || (!FirstPersonController.dialogue && !FirstPersonController.pause && FirstPersonController.FortempsTalk && !FirstPersonController.FortempsTalkEnd && professeur == "fortemps") ) {
+            if(professeur=="chimie") {SetNPCtxt("Dialogues" + Lg + "_Chimie2.txt");}
             foreach (GameObject canva in canvas)
             {
                 canva.SetActive(false);

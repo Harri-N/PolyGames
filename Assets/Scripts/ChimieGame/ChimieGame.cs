@@ -14,8 +14,6 @@ public class ChimieGame : MonoBehaviour
     [SerializeField] private GameObject Rock;
     [SerializeField] private GameObject pipette;
     [SerializeField] private GameObject Erlenmyer;
-
-    [SerializeField] private NPCInteractable chimieGuy;
     public Animator transition;
     private bool begin = false;
 
@@ -65,8 +63,7 @@ public class ChimieGame : MonoBehaviour
         AimPoint.SetActive(true);
         transition.ResetTrigger("FadeOut");
 
-        
-        chimieGuy.SetNPCtxt("Dialogues" + Lg + "_Chimie2.txt");
+        FirstPersonController.ChimieGame0 = true;        
         FirstPersonController.ChimieTalk2 = true;
     }
 

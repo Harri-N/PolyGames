@@ -83,8 +83,8 @@ namespace StarterAssets
 		static public bool dialogue = false;
 		static public bool pause = false;
 
-		//Langue
-		static public string Language = "";
+		//Langue par défaut
+		static public string Language = "FR";
 
 		// Success
 		static public int etape = 0;
@@ -110,6 +110,7 @@ namespace StarterAssets
 		static public bool ChimieTalkEnd = false;
 		static public bool ChimieTalk2 = false;
 		static public bool ChimieTalk2End = false;
+		static public bool ChimieGame0 = false;
 		static public bool ChimieGame = false;
 		static public bool Release = false;
 
@@ -140,7 +141,7 @@ namespace StarterAssets
 		static public void Restart()
 		{
 			etape = 0;
-			Language = "";
+			Language = "FR";
 			GameOver = false;
 			Doyen = false;
 			DoyenEnd = false;
@@ -158,6 +159,7 @@ namespace StarterAssets
 			MathGame = false;
 			ChimieTalk = false;
 			ChimieTalkEnd = false;
+			ChimieGame0 = false;
 			ChimieGame = false;
 			Release = false;
 			FortempsTalk = false;

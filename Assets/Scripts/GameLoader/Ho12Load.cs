@@ -6,6 +6,8 @@ using StarterAssets;
 public class Ho12Load : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject mathNPC;
+    [SerializeField] private GameObject tableau;
     private FirstPersonController fpscontroller;
     private void Awake() {
         fpscontroller = GetComponent<FirstPersonController>();
@@ -13,6 +15,11 @@ public class Ho12Load : MonoBehaviour
         FirstPersonController.Couloir = false;
         transform.Find("StartPoint").position = player.transform.position;
         transform.Find("StartPoint").rotation = player.transform.rotation;
+        if(FirstPersonController.MecaGame)
+        {
+            mathNPC.SetActive(true);
+            tableau.SetActive(true);
+        }
     }
     
     public void Reset()

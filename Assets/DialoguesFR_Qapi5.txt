@@ -6,4 +6,3 @@ Pour sortir de la faille spatio-temporelle, dirige-toi vers l'auditoire 12 avant
 L'auditoire 12 se trouve au 1er étage, à droite au-dessus de l’escalier.
 Pour te déplacer avec la voiture, utilise les touches ZQSD de ton clavier ou le joystick gauche de ta manette.
 Si tu te retrouves coincé, tu peux aller dans le menu pause et appuyer sur Réapparaitre.
-

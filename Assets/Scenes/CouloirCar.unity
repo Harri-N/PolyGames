@@ -5292,25 +5292,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactText: "Parler \xE0 M. Newton"
-  dialogues:
-  - "Bienvenue dans le domaine des m\xE9caniciens. L\u2019ing\xE9nieur civil m\xE9canicien
-    est un concepteur, un producteur et un gestionnaire de machines, d\u2019\xE9quipements
-    et de syst\xE8mes. "
-  - "5 jeunes ing\xE9nieurs m\xE9caniciens de la facult\xE9 ont con\xE7u lors du
-    Shell Eco-marathon cette voiture. Elle te permettra de parcourir plus rapidement
-    une longue distance avec le moins de carburant possible."
-  - "Si tu ne veux pas rester coinc\xE9 ici, je te conseille de la prendre. Il n\u2019y
-    pas de temps \xE0 perdre. Comme tu peux le constater, le dragon a d\xE9j\xE0
-    commenc\xE9 \xE0 attaquer et l'espace-temps a \xE9t\xE9 d\xE9form\xE9."
-  Nom: M. Newton
   player: {fileID: 1211667023}
   head: {fileID: 0}
-  d_template: {fileID: 754369841}
-  canva: {fileID: 1538095574}
   professeur: meca
   canvas:
   - {fileID: 1408881523}
   - {fileID: 1725387661}
+  d_template: {fileID: 754369841}
+  canva: {fileID: 1538095574}
 --- !u!114 &1151951510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5361,6 +5350,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!136 &1151951513
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151951506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 10
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1164384379
 GameObject:
   m_ObjectHideFlags: 0
