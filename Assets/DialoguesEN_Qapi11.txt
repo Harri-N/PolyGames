@@ -1,0 +1,5 @@
+Qapi
+Talk to Qapi
+Prepare the solution. On the table, you will find a pipette and a solute that you will have to put in an Erlenmyer. Then, first turn on the hob and then put your solution on to heat it up and speed up the reaction.
+Objective: To prepare the solution.
+no-talk

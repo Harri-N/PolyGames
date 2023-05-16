@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+//Ce script permet d'ouvrir un panneau en faisant appel à la fonction du controller
+
 public class OpenPanelButton : MonoBehaviour
 {
     [SerializeField] private PanelType type;

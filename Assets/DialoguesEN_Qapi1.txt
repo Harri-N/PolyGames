@@ -1,0 +1,7 @@
+Qapi
+Talk to Qapi
+Go to the bottom of the cave and collect limestone.
+Objective: Collect limestone.
+Here we are in the mine. You will find the raw materials at the bottom of it.
+To jump and avoid obstacles, use the space key on your keyboard or the A button on your controller.
+To strike with the pickaxe, use the left mouse button or the RT button on your controller.

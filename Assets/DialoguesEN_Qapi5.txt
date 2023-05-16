@@ -1,0 +1,8 @@
+Qapi
+Talk to Qapi
+To get out of the space-time rift, go to auditorium 12 before the time runs out. It is on the 1st floor, to the right above the stairs.
+Objective: Go to audience 12.
+To get out of the space-time rift, go to auditorium 12 before the time runs out.
+Auditorium 12 is on the 1st floor, to the right above the stairs.
+To move around with the car, use the ZQSD keys on your keyboard or the left stick on your controller.
+If you get stuck, you can go to the pause menu and press respawn.

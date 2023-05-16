@@ -990,6 +990,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 44588106877184276}
+  mathNPC: {fileID: 582475286}
+  tableau: {fileID: 987735384}
 --- !u!95 &513383851 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3729520889656104034, guid: 8ad352f420e53d24e9055fff2a02c2b3,
@@ -1347,6 +1349,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MathGuy
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9e1816104c2e4ff4da09961ea831f1d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e1816104c2e4ff4da09961ea831f1d6, type: 3}
 --- !u!1 &582475286 stripped
@@ -1380,22 +1387,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactText: "Parler \xE0 M. Pyth"
-  dialogues:
-  - "Bonjour, j\u2019enseigne les math\xE9matiques, une mati\xE8re plus que passionnante
-    !"
-  - "Tu l\u2019as peut-\xEAtre d\xE9j\xE0 compris mais les math\xE9matiques sont
-    indispensables dans tous les domaines de l\u2019ing\xE9nierie. C\u2019est pourquoi
-    je serai l\xE0 pour t\u2019apprendre des choses qui te seront sans aucun doute
-    utiles pour la suite."
-  Nom: M. Pyth
   player: {fileID: 44588106877184276}
   head: {fileID: 0}
-  d_template: {fileID: 754369841}
-  canva: {fileID: 1538095574}
   professeur: math
   canvas:
   - {fileID: 1408881523}
   - {fileID: 1725387661}
+  d_template: {fileID: 754369841}
+  canva: {fileID: 1538095574}
 --- !u!114 &582475290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3048,6 +3047,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 'tableau '
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1458d1ebef792cb409717547b857b6de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1458d1ebef792cb409717547b857b6de, type: 3}

@@ -1,0 +1,5 @@
+Qapi
+Talk to Qapi
+Go see Mr. Newton who is waiting for you in the lobby. You can enter the building through the main entrance.
+Objective: Go talk to Mr. Newton.
+Now that you have passed the first test, go join Mr. Newton. He's waiting for you in the hall. You can enter the building through the main entrance.

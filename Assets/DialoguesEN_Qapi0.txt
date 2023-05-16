@@ -1,0 +1,11 @@
+Qapi
+Talk to Qapi
+Go to the left side of the building. At the entrance to the Mining Engineering department and go talk to Mr. Stone.
+Objective: Go talk to Mr. Stone.
+Good morning ! Let me introduce myself, my name is Qapi and I am part of the QAP-Polytech faculty pedagogy unit.
+At Polytech de Mons, we have set up a success system for newcomers. This is why I will be there to accompany you and advise you throughout your adventure.
+Do not hesitate to consult me by pressing the start button or the Tab key. You will find in the "tips" section a reminder of the current mission.
+To start, go to the left wing of the building. At the entrance to the Mining Engineering department, you will find Mr. Stone. He will give you the first test.
+To move around, use the ZQSD keys on your keyboard or the left stick on your controller.
+To orient the camera, use your mouse or the right stick of your controller. You can change the sensitivity in the pause menu settings.
+To interact with your environment, use the E key on your keyboard or the X button on your controller.
