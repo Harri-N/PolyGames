@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using StarterAssets;
 
+//Ce script permet de passer au dialogue suivant et de déterminer une action à la fin d'un dialogue
+
 public class NextDialogue : MonoBehaviour
 {
     [SerializeField] private List<Animator> NPCs = new List<Animator>();

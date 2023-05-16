@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
 
+//Ce script sert à gérer le jeu de math
+
 public class MathGame : MonoBehaviour
 {
     [SerializeField] private GameObject player;
@@ -12,14 +14,18 @@ public class MathGame : MonoBehaviour
     public Animator transition;
     private bool begin = false;
 
+    
     private void Update() 
     {
+        //Lancement du jeu de math après la fin du dialogue avec le prof
         if (FirstPersonController.MathTalkEnd && !begin)
         {
             StartCoroutine(GameBegin());
         }
     }
 
+    //Cette fonction lance le jeu de Math 
+    //Elle change de caméra et lance le canva des QCM
     IEnumerator GameBegin()
     {
         begin = true;
@@ -37,6 +43,7 @@ public class MathGame : MonoBehaviour
         StartCoroutine(GameSucces());
     }
 
+    //Cette fonction termine le jeu de Math et rechange de point de vue
     IEnumerator GameSucces()
     {
         transition.SetTrigger("FadeOut");

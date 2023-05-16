@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
 
+//Ce script sert à gérer le jeu de chimie
+
 public class ChimieGame : MonoBehaviour
 {
     [SerializeField] private GameObject player;
@@ -32,6 +34,8 @@ public class ChimieGame : MonoBehaviour
         }
     }
 
+    //Cette fonction lance le début du QCM
+    //Elle change de caméra et active le canva du QCM
     IEnumerator GameBegin()
     {
         begin = true;
@@ -49,6 +53,7 @@ public class ChimieGame : MonoBehaviour
         StartCoroutine(GameSucces());
     }
 
+    //Cette fonction termine le QCM et fait apparaitre l'erlenmeyer, la pipette et le caillou
     IEnumerator GameSucces()
     {
         transition.SetTrigger("FadeOut");

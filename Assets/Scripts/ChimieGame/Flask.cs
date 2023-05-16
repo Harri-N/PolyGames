@@ -5,7 +5,8 @@ using StarterAssets;
 
 public class Flask : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Les "SerializeFields" permettent de faire le lier avec d autres objets externes au script
+
     [SerializeField]
     private List<Renderer> renderers;
 
@@ -20,7 +21,7 @@ public class Flask : MonoBehaviour
     //helper list to cache all the materials ofd this object
     private List<Material> materials;
     
-    //Gets all the materials from each renderer
+    //Prend la référence de tous les matériaux de l objet pour pouvoir les modifier par la suite on "Awake" c est à dire avant que la première frame soit générée
     private void Awake()
     {
         materials = new List<Material>();
@@ -32,7 +33,8 @@ public class Flask : MonoBehaviour
         }
 
     }
-
+    //Cette fonction est appelée quand la pipette est utilisée sur l objet portant le script Flask.cs
+    //Elle permet de modifier la couleur d émission des materiaux
     public void Fill(bool val)
     {
         if (val)
@@ -64,7 +66,9 @@ public class Flask : MonoBehaviour
         }
 
     }
-
+    
+    //Cette fonction est appelée quand le rock est utilisé sur l objet portant le script Flask.cs
+    //Elle permet de modifier la couleur d émission des materiaux
     public void Full(bool val)
     {
         if (val)
@@ -96,6 +100,8 @@ public class Flask : MonoBehaviour
         }
 
     }
+
+    //déctecte la collision avec l objet possédant le script "Stove.cs" et déclanche la fumée en activant l objet enfant de la flask qui contient la fumée
     private void OnCollisionStay(Collision collision)
     {
         foreach (var material in materials)

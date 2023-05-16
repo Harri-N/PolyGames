@@ -125,7 +125,6 @@ public class CarInteractable : InteractableObject
             {
                 if(collider.TryGetComponent(out DoorInteractable doorInteractable)) {
                     StarterAssets.FirstPersonController.MecaGame = true;
-                    
                 }
             }
         }

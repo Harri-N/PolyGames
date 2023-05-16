@@ -6,6 +6,8 @@ using StarterAssets;
 using UnityEngine.InputSystem;
 using TMPro;
 
+//Ce script sert à définir l'interaction d'un PNJ
+
 public class NPCInteractable : InteractableObject
 {
     [Header("Physique")]
@@ -35,6 +37,8 @@ public class NPCInteractable : InteractableObject
         npcLookAt = GetComponent<NPCLookAt>();
         fpscontroller = GetComponent<FirstPersonController>();
         Lg = FirstPersonController.Language;
+
+        //Associer le texte du fichier aux dialogues du PNJ
         switch(professeur)
         {
             case "doyen":

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
 
+//Ce script stocke la position de départ de la voiture pour permettre de réapparaitre à cet endroit
+
 public class CouloirCarLoad : MonoBehaviour
 {
     [SerializeField] private Transform car;

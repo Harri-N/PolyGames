@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+//Ce script permet de lire un fichier txt
+
 public class ReadFileLine
 {
     public List<string> Lecture(string fileName)
@@ -31,7 +33,6 @@ public class ReadFileLine
                 text.Add(line);
             }
         }
-		
 		
         reader.Close();
         return text;

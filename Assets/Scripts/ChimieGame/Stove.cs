@@ -28,10 +28,13 @@ public class Stove : MonoBehaviour
             materials.AddRange(new List<Material>(renderer.materials));
         }
     }
+
+    //premet aux autres scirpts de connaitre l état du four
     public bool GetStoveState()
     {
         return stoveState;
     }
+    //permet d allumer et éteindre le four et change les shaders en fonction de son état
     public void Power(bool val)
     {
         Debug.Log(val);
@@ -58,6 +61,5 @@ public class Stove : MonoBehaviour
             }
         }
     }
-    // Start is called before the first frame update
     
 }

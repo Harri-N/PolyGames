@@ -22,33 +22,38 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject rocks;
     // Range 
     [SerializeField][Min(1)] private float hitRange;
-
+    // lien vers le player
     [SerializeField] private Transform pickUpParent;
-
+    // lien vers l item que le player à en main
     [SerializeField] private GameObject inHandItem;
 
-
+    // différent Raycast dont on aura besoin
     private RaycastHit hit;
     private RaycastHit currentHit;
     private RaycastHit currentHit2;
 
+    //initialise l objet en main comme étant null
     private void Awake()
     {
         inHandItem = null;
     }
 
+    //à chaque frame on va regarder avec quoi rentre en collision le Raycast pour agir en fonction 
     private void Update()
     {
         if(!FirstPersonController.dialogue && !FirstPersonController.pause)
         {
             if(hit.collider != null && inHandItem == null)
             {
+                //reset les UI to false
                 hit.collider.GetComponent<Highlight>()?.ToggleHighlight(false);
                 dropUI.SetActive(false);
                 pickUpUI.SetActive(false);
                 useUI.SetActive(false);
                 useUI2.SetActive(false);
                 useUI3.SetActive(false);
+
+                //prend en main l objet
                 Rigidbody rigidbody = hit.collider.GetComponent<Rigidbody>();
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -101,9 +106,13 @@ public class Player : MonoBehaviour
                     }
                 }
             }
+
+            //si le player a qqch en main 
             if (inHandItem != null)
             {
                 dropUI.SetActive(true);
+
+                //on le lache quand on appuie sur E
                 if (Input.GetKeyDown(KeyCode.E) || FirstPersonController.Release)
                 {
                     FirstPersonController.Release = false;
@@ -123,6 +132,8 @@ public class Player : MonoBehaviour
                     }
                     return;
                 }
+
+                //si c est un pipette et que l on presse R on l utilise grace à la fonction Fill de Flask.cs
                 if (inHandItem.GetComponent<Pipette>())
                 {
                     if (currentHit.collider != null)
@@ -162,6 +173,7 @@ public class Player : MonoBehaviour
                 }
                 if (inHandItem.GetComponent<Rock>())
                 {
+                    //si c est un rock et que l on presse R on l utilise grace à la fonction Full de Flask.cs
                     if (currentHit2.collider != null)
                     {
                         currentHit2.collider.GetComponent<Highlight>()?.ToggleHighlight(false);
@@ -180,6 +192,7 @@ public class Player : MonoBehaviour
 
                     }
 
+                    //check la collision du Raycast
                     if (Physics.Raycast(
                         Camera.main.transform.transform.position,
                         Camera.main.transform.transform.forward,

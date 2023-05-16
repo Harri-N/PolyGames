@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
 
+//Ce script permet de changer la position de départ en fonction de quel auditoire on sort
+
 public class CouloirLoad : MonoBehaviour
 {
     [SerializeField] private GameObject player;
@@ -18,11 +20,14 @@ public class CouloirLoad : MonoBehaviour
         targetPosition11 = transform.GetChild(0).position;
         targetPosition12 = transform.GetChild(1).position;
 
+        //Change la musique si on termine le jeu de chimie
         if (FirstPersonController.ChimieGame)
         {
             audio.clip = dramaSound;
             audio.Play();
         }
+
+        //Change la position de départ si sort du Ho11
         if (FirstPersonController.Ho11)
         {   
             player.SetActive(false);
@@ -31,7 +36,8 @@ public class CouloirLoad : MonoBehaviour
             FirstPersonController.Ho11 = false;
             player.SetActive(true);
         }
-
+        
+        //Change la position de départ si sort du Ho12
         else if (FirstPersonController.Ho12)
         {
             player.SetActive(false);
@@ -44,6 +50,7 @@ public class CouloirLoad : MonoBehaviour
         transform.Find("StartPoint").rotation = player.transform.rotation;
     }
     
+    //Cette fonction permet de faire réapparaitre le personnage 
     public void Reset()
     {
         player.SetActive(false);

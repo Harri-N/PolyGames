@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
 
+//Ce script stocke la position de départ du joueur et de l'erlenmeyer, la pipette, le caillou pour permettre de réapparaitre à cet endroit
+
 public class Ho11Load : MonoBehaviour
 {
     [SerializeField] private GameObject player;
@@ -27,6 +29,8 @@ public class Ho11Load : MonoBehaviour
         transform.Find("p1").rotation = Rock.transform.rotation;
         transform.Find("p2").rotation = pipette.transform.rotation;
         transform.Find("p3").rotation = Erlenmyer.transform.rotation;
+        
+        //Si on a fini le jeu de math, on fait apparaitre un tableau, le four et un PNJ
         if(FirstPersonController.MathGame)
         {
             tableau.SetActive(true);

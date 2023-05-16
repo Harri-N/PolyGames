@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Ce script gère les crédits et les animations
+
 public class CreditsLoad : MonoBehaviour
 {
 
